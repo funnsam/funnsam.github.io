@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("/res/CascadiaCode.ttf");
+}
+
+* {
+    padding         : 0;
+    margin          : 0.25rem 0 0.25rem 0;
+    font-family     : "CascadiaCode", monospace;
+
+    --trans-time    : 250ms;
+    --bg-color      : #161618;
+}
+
+body {
+    background-color: var(--bg-color);
+    color           : white;
+    padding         : 0.25rem 5rem 0.25rem 5rem;
+}
+
+h1 *, h1 {
+    font-size       : xx-large;
+    font-weight     : 800;
+    padding         : 0.25rem;
+    margin-bottom   : 0.5rem;
+    border-bottom   : white solid 1px;
+}
+
+h2 *, h2 {
+    font-size       : x-large;
+    font-weight     : 700;
+    padding         : 0.15rem;
+}
+
+a:any-link {
+    color           : #38ffcd;
+    transition      : var(--trans-time);
+}
+
+a:any-link:hover {
+    background-color: white;
+    color           : var(--bg-color);
+    padding         : 0.35rem;
+}
+
+code {
+    background-color: #585a5c;
+    padding         : 0.5rem;
+}
+
+nav {
+    background-color: white;
+    color           : var(--bg-color);
+    padding         : 1rem;
+    position        : sticky;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+}
+
+nav * {
+    color           : var(--bg-color) !important;
+}
+
+nav > p {
+    padding         : 0;
+}
+
+nav a:any-link {
+    padding         : 0.3rem !important;
+    font-size       : 1.2rem;
+}
+
+nav a:any-link:hover {
+    background-color: var(--bg-color) !important;
+    color           : white !important;
+    padding         : 0.3rem !important;
+}
+
+ul {
+    margin-left     : 3em;
+}
+
+p {
+    padding-left    : 1rem;
+}
+
+.anchor {
+    visibility      : hidden;
+}
