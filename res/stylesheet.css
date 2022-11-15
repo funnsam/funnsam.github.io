@@ -20,7 +20,7 @@
 body {
     background-color: var(--bg-color);
     color           : white;
-    padding         : 0.25rem 5rem 0.25rem 5rem;
+    padding         : 0.25rem 4vw 0.25rem 4vw;
 }
 
 h1 *, h1 {
