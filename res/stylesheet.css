@@ -4,17 +4,19 @@
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format('woff2');
+    font-family: "Ubuntu";
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKfw72.woff2) format('woff2');
 }
 
 * {
     padding         : 0;
     margin          : 0.25rem 0 0.25rem 0;
-    font-family     : "Montserrat", sans-serif;
+    font-family     : "Ubuntu", sans-serif;
 
     --trans-time    : 250ms;
     --bg-color      : #161618;
+
+    caret-color     : transparent;
 }
 
 body {
@@ -81,6 +83,7 @@ code, .highlight {
     border-radius   : 5px;
     padding         : 0.15rem;
     font-family     : "CascadiaCode", monospace !important;
+    overflow        : scroll;
 }
 
 .highlight * {
