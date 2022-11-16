@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/res/stylesheet.css">
+    <link rel="stylesheet" href="/res/highlight.css">
+    <title>Unofficial Hexagn Document - 2</title>
+    <meta name="description" content="">
+	<meta property="og:title" content="Unofficial Hexagn Document - 2" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="" />
+</head>
+<body>
+    <nav><p><a href="/">Home</a><a href="/projects">Projects</a><a href="/trashpile">The Trashpile</a><a href="/blogs">Blogs</a></p></nav>
+    <h1>Unofficial Hexagn Document - 2 - Syntax</h1>
+<h1>Basic Syntax</h1>
+<p>Comments:</p>
+<div class="highlight highlight-source-c"><pre><span class="pl-c"><span class="pl-c">//</span> Hello single-line comment</span>
+
+<span class="pl-c"><span class="pl-c">/*</span></span>
+<span class="pl-c">Hello multi-line comment</span>
+<span class="pl-c"><span class="pl-c">*/</span></span></pre></div>
+<p>Call a function:</p>
+<div class="highlight highlight-source-c"><pre><span class="pl-en">a_func_to_be_called</span>(<span class="pl-c"><span class="pl-c">/*</span>args<span class="pl-c">*/</span></span>);</pre></div>
+<p>Variable init:</p>
+<div class="highlight highlight-source-c"><pre>var_type var_name_not_init;
+var_type var_name = var_value;</pre></div>
+<p>Set variable:</p>
+<div class="highlight highlight-source-c"><pre>var_name = new_value;</pre></div>
+<p>Math:</p>
+<div class="highlight highlight-source-c"><pre><span class="pl-c"><span class="pl-c">//</span> Basically try to code in C and learn from it</span></pre></div>
+<p>Importing:</p>
+<div class="highlight highlight-source-c"><pre>import name;
+import name.math;</pre></div>
+<p>Directly writing URCL:</p>
+<div class="highlight highlight-source-c"><pre><span class="pl-c"><span class="pl-c">//</span>urcl "ADD R0 R1 R1";</span>
+<span class="pl-c"><span class="pl-c">//</span>urcl "SUB R0 R1 R2";</span></pre></div>
+<p>Conditionals:</p>
+<div class="highlight highlight-source-c"><pre><span class="pl-k">if</span> (<span class="pl-c"><span class="pl-c">/*</span>condition<span class="pl-c">*/</span></span>) {
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+}	<span class="pl-c"><span class="pl-c">//</span> Does it have else? It doesn't seems like having one</span></pre></div>
+<p>Loops:</p>
+<div class="highlight highlight-source-c"><pre><span class="pl-k">while</span> (<span class="pl-c"><span class="pl-c">/*</span>condition<span class="pl-c">*/</span></span>) {
+    <span class="pl-c"><span class="pl-c">//</span> Do something in here</span>
+}</pre></div>
+<p>Declaring functions:</p>
+<div class="highlight highlight-source-c"><pre>return_type <span class="pl-en">func_name</span>(argN_type argN_name <span class="pl-c"><span class="pl-c">/*</span>, ...<span class="pl-c">*/</span></span>) {
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-c"><span class="pl-c">//</span> optional return (?)</span>
+}</pre></div>
+<h1>Variable types</h1>
+<p>Here is the list of variable types</p>
+<ul>
+<li>Integers
+<ul>
+<li>Signed
+<ul>
+<li>int32</li>
+<li>int16</li>
+<li>int8</li>
+</ul>
+</li>
+<li>Unsigned
+<ul>
+<li>uint32</li>
+<li>uint16</li>
+<li>uint8</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Floating point numbers
+<ul>
+<li>float32</li>
+<li>float64</li>
+</ul>
+</li>
+<li>Others
+<ul>
+<li>string</li>
+<li>char</li>
+<li>void</li>
+</ul>
+</li>
+</ul>
+<p><a href="index.html">Back to Table of Content</a></p>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/res/stylesheet.css">
+    <link rel="stylesheet" href="/res/highlight.css">
+    <title>Unofficial Hexagn Document - 1</title>
+    <meta name="description" content="">
+	<meta property="og:title" content="Unofficial Hexagn Document - 1" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="" />
+</head>
+<body>
+    <nav><p><a href="/">Home</a><a href="/projects">Projects</a><a href="/trashpile">The Trashpile</a><a href="/blogs">Blogs</a></p></nav>
+    <h1>Unofficial Hexagn Document - 1 - Introduction</h1>
+<h1>About Hexagn</h1>
+<p>Hexagn is a simple programming language that compiles to URCL.<br>
+This make Hexagn very portable, since lots of transpilers and emulaters for URCL is made already.</p>
+<p>You can even run Hexagn programs in Minecraft CPUs if it has enough bits, memory and etc.</p>
+<h2>File Extention</h2>
+<p>filename.hxgn</p>
+<h2>Compilers</h2>
+<p>There is a C++ one and Rust one.<br>
+C++ one is the original compiler but lacks some features that Rust compiler has.</p>
+<p>This document is mainly targetted the <strong>C++</strong> one.</p>
+<h1>Getting Started</h1>
+<h2>Get the compiler</h2>
+<ol>
+<li>Install required softwares
+<ul>
+<li>Windows
+<ul>
+<li><a href="https://jmeubank.github.io/tdm-gcc/download/" rel="nofollow">TDM-GCC Toolchain</a></li>
+</ul>
+</li>
+<li>Linux
+<ul>
+<li><a href="https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/" rel="nofollow">GCC and Build-Essential</a></li>
+</ul>
+</li>
+<li>MacOS
+<ul>
+<li>Clang++</li>
+<li>Make</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install Hexagn Compiler
+<ol>
+<li><a href="https://github.com/emm312/Hexagn/archive/refs/heads/AST.zip">Download source code</a></li>
+<li>Extract it to anywhere</li>
+<li>Build Hexagn
+<ul>
+<li>Windows
+<ol>
+<li>Open the unzipped folder with Windows Explorer</li>
+<li>Shift + Right-Click <strong>without selecting any files</strong></li>
+<li>Select open with cmd
+<ul>
+<li>If there's no open with cmd, use open with powershell and type in <code class="notranslate">cmd</code></li>
+</ul>
+</li>
+<li>Run <code class="notranslate">make</code></li>
+<li>Wait</li>
+</ol>
+</li>
+<li>Linux and MacOS
+<ol>
+<li>Open Terminal</li>
+<li>Use <code class="notranslate">cd</code> to go to where you extracted</li>
+<li>Run <code class="notranslate">make</code></li>
+<li>Wait</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Check is Hexagn is properly compiled by <code class="notranslate">hexagn --version</code></li>
+</ol>
+</li>
+</ol>
+<p>If you did all the process correctly, Hexagn should be installed</p>
+<h2>Start using Hexagn</h2>
+<p>Let's start off by making Hello World.</p>
+<ol>
+<li>Open any file editor
+<ul>
+<li>On Windows you can use Notepad</li>
+<li>On MacOS you can use TextEdit</li>
+<li>On Linux you can use GNU Nano</li>
+</ul>
+</li>
+<li>Paste this code to a file in where Hexagn compiler is
+<div class="highlight highlight-source-c"><pre>import io;
+int32 <span class="pl-en">main</span>() {
+	<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>Hello, World!<span class="pl-pds">"</span></span>);
+}</pre></div>
+</li>
+<li>Compiling
+<ol>
+<li>Go to where you stored the code in Terminal / CMD</li>
+<li>Compile it by <code class="notranslate">hexagn your-file-name.hxgn -o the-output-file.urcl</code></li>
+</ol>
+</li>
+<li>Running
+<ol>
+<li>Open the output file</li>
+<li>Copy the code to <a href="https://bramotte.github.io/urcl-explorer" rel="nofollow">the URCX emulater</a></li>
+<li>Click "Compile and Run" button</li>
+</ol>
+</li>
+</ol>
+<p><a href="index.html">Back to Table of Content</a></p>
+</body>
+</html>

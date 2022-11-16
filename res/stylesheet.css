@@ -19,10 +19,15 @@
     caret-color     : transparent;
 }
 
+html {
+    width           : 100%;
+}
+
 body {
     background-color: var(--bg-color);
     color           : white;
     padding         : 0.25rem 4vw 0.25rem 4vw;
+    height          : 100%;
 }
 
 h1 *, h1 {
@@ -52,7 +57,7 @@ a:any-link:hover {
     box-shadow      : 0 0 5px white;
 }
 
-a[target="_blank"]:hover {
+a[target="_blank"]:hover, a[image]:hover {
     background-color: transparent;
     color           : transparent;
     padding         : 0;
@@ -126,7 +131,7 @@ nav a:any-link:hover {
     box-shadow      : 0 0 5px var(--bg-color);
 }
 
-ul {
+ul, ol {
     margin-left     : 3em;
 }
 
@@ -136,4 +141,38 @@ p {
 
 .anchor {
     visibility      : hidden;
+}
+
+.gallery-container {
+    display         : grid;
+    height          : 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.gallery-image {
+    object-fit      : cover;
+    width           : 15vw;
+    height          : 250px;
+    box-shadow      : 0 0 5px var(--bg-color);
+    background-color: var(--bg-color);
+}
+
+.gallery-image:hover {
+    object-fit      : cover;
+    width           : 20vw;
+    height          : 350px;
+    box-shadow      : 0 0 5px var(--bg-color);
+    background-color: var(--bg-color);
+}
+
+.gallery-description {
+    background-color: white;
+    color           : var(--bg-color);
+    padding         : 0.5rem;
+    border-radius   : 5px;
+    position        : relative;
+    left            : 1vw;
+    width           : 75%;
+    top             : -15px;
+    z-index         : -1;
 }
