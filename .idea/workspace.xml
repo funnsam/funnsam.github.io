@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="726260cc-dba2-447e-a525-e5170c149c63" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs/2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs/3-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs/3-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/hexagndocs/unsorted.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/mkwebsite/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/res/hexagndocs.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/CascadiaCode.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/coolbadge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/coolbadge.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/highlight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trashpile/index._md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trashpile/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trashpile/res/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trashpile/res/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trashpile/res/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trashpile/res/4.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2HtrOXUuQQCzUK35ix0zh2bvZsv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="726260cc-dba2-447e-a525-e5170c149c63" name="Changes" comment="" />
+      <created>1669115191915</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669115191915</updated>
+    </task>
+    <servers />
+  </component>
+</project>
