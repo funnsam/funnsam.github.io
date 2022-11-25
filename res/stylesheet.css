@@ -146,7 +146,7 @@ p {
 .gallery-container {
     display         : grid;
     height          : 100%;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(var(--js-cols), 1fr);
 }
 
 .gallery-image {
