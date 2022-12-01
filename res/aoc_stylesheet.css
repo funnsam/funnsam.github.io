@@ -1,0 +1,35 @@
+* {
+    font-family     : "CascadiaCode", monospace;
+}
+
+nav {
+    background-color: transparent;
+}
+
+nav a:any-link {
+    padding         : 0.3rem !important;
+}
+
+nav a:any-link:hover {
+    padding         : 0.3rem !important;
+}
+
+nav a:any-link::before {
+    content: "[";
+}
+
+nav a:any-link::after {
+    content: "]";
+}
+
+a:any-link {
+    color           : #009900 !important;
+    background-color: transparent !important;
+}
+
+a:any-link:hover {
+    color           : #00df00 !important;
+    background-color: transparent !important;
+    box-shadow      : none !important;
+    padding         : 0 !important;
+}

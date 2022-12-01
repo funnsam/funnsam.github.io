@@ -87,12 +87,12 @@ code, .highlight {
     border          : #363638 solid 2px;
     border-radius   : 5px;
     padding         : 0.15rem;
-    font-family     : "CascadiaCode", monospace !important;
+    font-family     : "CascadiaCode", monospace;
     overflow        : scroll;
 }
 
 .highlight * {
-    font-family     : "CascadiaCode", monospace !important;
+    font-family     : "CascadiaCode", monospace;
 }
 
 .highlight {
@@ -111,23 +111,20 @@ nav {
     text-align      : center;
 }
 
-nav * {
-    color           : var(--bg-color) !important;
-}
-
 nav > p {
     padding         : 0;
 }
 
 nav a:any-link {
-    padding         : 0.3rem !important;
+    padding         : 0.3rem;
     font-size       : 1.2rem;
+    color           : var(--bg-color);
 }
 
 nav a:any-link:hover {
-    background-color: var(--bg-color) !important;
-    color           : white !important;
-    padding         : 0.3rem !important;
+    background-color: var(--bg-color);
+    color           : white;
+    padding         : 0.3rem;
     box-shadow      : 0 0 5px var(--bg-color);
 }
 
