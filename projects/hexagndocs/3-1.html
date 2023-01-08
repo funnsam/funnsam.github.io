@@ -18,30 +18,30 @@
 <h1>Hexagn stdlib - io</h1>
 <h2>io</h2>
 <p>Printing:</p>
-<div class="highlight highlight-source-c"><pre><span class="pl-k">void</span> <span class="pl-en">println</span>(string); <span class="pl-c"><span class="pl-c">//</span> Print + a \n</span>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">void</span> <span class="pl-en">println</span>(string); <span class="pl-c"><span class="pl-c">//</span> Print + a \n</span>
 <span class="pl-k">void</span> <span class="pl-en">print</span>(string);   <span class="pl-c"><span class="pl-c">//</span> Print to console</span></pre></div>
 <p>Input:</p>
-<div class="highlight highlight-source-c"><pre><span class="pl-k">void</span> <span class="pl-en">input</span>(string); <span class="pl-c"><span class="pl-c">//</span> Replaces your string with user inputted one</span>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">void</span> <span class="pl-en">input</span>(string); <span class="pl-c"><span class="pl-c">//</span> Replaces your string with user inputted one</span>
 <span class="pl-k">void</span> <span class="pl-en">input</span>(int32);  <span class="pl-c"><span class="pl-c">//</span> Basically useless</span></pre></div>
 <h2>io.graphics</h2>
 <p>Set Pixel:</p>
-<div class="highlight highlight-source-c"><pre><span class="pl-k">void</span> <span class="pl-en">setpixel</span>(int16 x, int16 y, int32 color); <span class="pl-c"><span class="pl-c">//</span> Color maybe assumes target machine is using RGB24 or RGB32?</span></pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">void</span> <span class="pl-en">setpixel</span>(int16 x, int16 y, int32 color); <span class="pl-c"><span class="pl-c">//</span> Color maybe assumes target machine is using RGB24 or RGB32?</span></pre></div>
 <p>Get Pixel:</p>
-<div class="highlight highlight-source-c"><pre><span class="pl-c"><span class="pl-c">//</span> Personal advice: Use framebuffers instead, they are faster and the only choice of some machines</span>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c"><span class="pl-c">//</span> Personal advice: Use framebuffers instead, they are faster and the only choice of some machines</span>
 int32 <span class="pl-en">getpixel</span>(int32 x, int32 y); <span class="pl-c"><span class="pl-c">//</span> Returns the color of pixel in X, Y</span></pre></div>
 <p>Buffer:</p>
-<div class="highlight highlight-source-c"><pre><span class="pl-k">void</span> <span class="pl-en">buffer</span>(intX state); <span class="pl-c"><span class="pl-c">//</span> Same as OUT %BUFFER state in URCL</span>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">void</span> <span class="pl-en">buffer</span>(intX state); <span class="pl-c"><span class="pl-c">//</span> Same as OUT %BUFFER state in URCL</span>
 <span class="pl-c"><span class="pl-c">//</span> Currently not in Hexagn yet, but only on hexagn-stdlib master branch</span></pre></div>
 <h2>io.graphics.advanced</h2>
 <p>Draw line:</p>
-<div class="highlight highlight-source-c"><pre><span class="pl-k">void</span> <span class="pl-en">drawline</span>(int16 x1, int16 y1, int16 x2, int16 y2); <span class="pl-c"><span class="pl-c">//</span> Draws line from (x1, y1) to (x2, y2)</span></pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">void</span> <span class="pl-en">drawline</span>(int16 x1, int16 y1, int16 x2, int16 y2); <span class="pl-c"><span class="pl-c">//</span> Draws line from (x1, y1) to (x2, y2)</span></pre></div>
 <h2>io.mouse</h2>
 <p>Get mouse position:</p>
-<div class="highlight highlight-source-c"><pre>int32 <span class="pl-en">getmousex</span>(<span class="pl-k">void</span>);
+<div class="highlight highlight-source-c"><pre class="notranslate">int32 <span class="pl-en">getmousex</span>(<span class="pl-k">void</span>);
 int32 <span class="pl-en">getmousey</span>(<span class="pl-k">void</span>);
 <span class="pl-c"><span class="pl-c">//</span> Same as IN RX %MOUSE_X and %MOUSE_Y in URCL</span></pre></div>
 <p>Get mouse button state:</p>
-<div class="highlight highlight-source-c"><pre>int32 <span class="pl-en">getmousebuttons</span>(<span class="pl-k">void</span>); <span class="pl-c"><span class="pl-c">//</span> Same as IN RX %MOUSE_BUTTONS in URCL</span></pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate">int32 <span class="pl-en">getmousebuttons</span>(<span class="pl-k">void</span>); <span class="pl-c"><span class="pl-c">//</span> Same as IN RX %MOUSE_BUTTONS in URCL</span></pre></div>
 <p><a href="index.html">Back to Table of Content</a></p>
 </body>
 </html>

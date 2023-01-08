@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/res/stylesheet.css">
+    <link rel="stylesheet" href="/res/highlight.css">
+    <title>Hak me challenge 1</title>
+    <meta name="description" content="">
+	<meta property="og:title" content="Hak me challenge 1" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="" />
+</head>
+<body>
+    <nav><p><a href="/">Home</a><a href="/projects">Projects</a><a href="/trashpile">The Trashpile</a><a href="/blogs">Blogs</a></p></nav>
+    <h1>Challenge 1</h1>
+<p>Code of encrypting the data:</p>
+<div class="highlight highlight-source-rust"><pre class="notranslate"><span class="pl-k">pub</span> <span class="pl-k">fn</span> <span class="pl-en">encrypt</span><span class="pl-kos">(</span><span class="pl-s1">src</span><span class="pl-kos">:</span> <span class="pl-smi">Vec</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span><span class="pl-kos">,</span> <span class="pl-s1">key</span><span class="pl-kos">:</span> <span class="pl-smi">Vec</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span><span class="pl-kos">)</span> -&gt; <span class="pl-smi">Vec</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">let</span> <span class="pl-k">mut</span> b = key<span class="pl-kos">.</span><span class="pl-en">iter</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">cycle</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    s<span class="pl-kos">.</span><span class="pl-en">into_iter</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span>|x| x ^ b<span class="pl-kos">.</span><span class="pl-en">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">unwrap</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">collect</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
+<span class="pl-kos">}</span></pre></div>
+<p>Hex view of the file:</p>
+<pre class="notranslate"><code class="notranslate">The puzzle is work in progress.
+Come back a few days later.
+</code></pre>
+</body>
+</html>

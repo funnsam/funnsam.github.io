@@ -86,18 +86,34 @@ code, .highlight {
     background-color: #363638;
     border          : #363638 solid 2px;
     border-radius   : 5px;
-    padding         : 0.15rem;
     font-family     : "CascadiaCode", monospace;
     overflow        : scroll;
 }
 
 .highlight * {
     font-family     : "CascadiaCode", monospace;
+    margin: 0 !important;
 }
 
 .highlight {
-    padding         : 0.5rem;
     margin-left     : 1rem;
+}
+
+pre.notranslate {
+    background-color: #363638;
+    border          : #363638 solid 2px;
+    border-radius   : 5px;
+    padding         : 0.15rem;
+    margin-left     : 1rem;
+    font-family     : "CascadiaCode", monospace;
+    overflow        : scroll;
+}
+
+code.notranslate {
+    background-color: transparent;
+    border          : 0;
+    border-radius   : 0;
+    padding         : 0;
 }
 
 nav {
@@ -172,4 +188,43 @@ p {
     width           : 75%;
     top             : -15px;
     z-index         : -1;
+}
+
+input[type=url] {
+    width           : 50%;
+    font-size       : large;
+    outline         : none;
+    border-top      : 0;
+    border-bottom   : white solid 2.5px;
+    border-left     : 0;
+    border-right    : 0;
+    padding         : 0.25rem;
+    background-color: transparent;
+    color           : white;
+    transition      : var(--trans-time);
+    caret-color     : white;
+}
+
+input[type=url]:hover, input[type=url]:focus {
+    background-color: white;
+    color           : var(--bg-color);
+    padding         : 0.5rem;
+    caret-color     : var(--bg-color);
+}
+
+input[type=submit] {
+    font-size       : large;
+    outline         : none;
+    border          : none;
+    padding         : 0.25rem;
+    background-color: transparent;
+    color           : white;
+    transition      : var(--trans-time);
+}
+
+input[type=submit]:hover {
+    padding         : 0.5rem;
+    background-color: white;
+    color           : var(--bg-color);
+    box-shadow      : 0 0 5px white;
 }
