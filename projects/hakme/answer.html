@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/res/stylesheet.css">
+    <link rel="stylesheet" href="/res/highlight.css">
+    <title>Answer Hak Me</title>
+    <meta name="description" content="">
+	<meta property="og:title" content="Answer Hak Me" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="" />
+</head>
+<body>
+    <nav><p><a href="/">Home</a><a href="/projects">Projects</a><a href="/trashpile">The Trashpile</a><a href="/blogs">Blogs</a></p></nav>
+    <script>
+    const url_params = new URLSearchParams(window.location.search);
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("title").innerText = "Day " + url_params.get("from");
+        document.getElementById("submit").onclick = _ => {
+            let answer = document.getElementById("input").value;
+            let lvl = parseInt(url_params.get("from"));
+            switch (lvl) {
+                case 1:
+                    check_ans(answer, "dN&]*@vA4:B3#Y+g", lvl);
+                    break;
+                default:
+                    document.getElementById("description").innerHTML = `The level ${lvl} is invalid!`;
+                    break;
+            }
+        }
+    });
+
+    function check_ans(ans, cor, lvl) {
+        if (ans === cor) {
+            document.getElementById("description").innerHTML = `Your answer is correct! Click <a href="./${lvl+1}.html">here</a> to go to the next level.`
+        } else {
+            document.getElementById("description").innerHTML = `Your answer is incorrect! Please retry.`
+        }
+    }
+</script>
+<style>
+    input, button {
+        padding: .5rem;
+        outline: none;
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+        caret-color: white;
+    }
+    input:hover, input:active, button:hover, button:active {
+        border: 1px solid green;
+        box-shadow: 0 0 .5rem greenyellow;
+    }
+    input:hover, button:hover {
+        cursor: pointer;
+    }
+    input {
+        font-family: "CascadiaCode", monospace;
+        margin-left: 1rem;
+    }
+</style>
+<h1 id="title"></h1>
+<p id="description">Please enter the correct answer.</p>
+<input id="input"></input> <button id="submit">SUBMIT</button>
+</body>
+</html>

@@ -15,14 +15,20 @@
 <body>
     <nav><p><a href="/">Home</a><a href="/projects">Projects</a><a href="/trashpile">The Trashpile</a><a href="/blogs">Blogs</a></p></nav>
     <h1>Challenge 1</h1>
-<p>Code of encrypting the data:</p>
+<h2>Code of encrypting the data:</h2>
 <div class="highlight highlight-source-rust"><pre class="notranslate"><span class="pl-k">pub</span> <span class="pl-k">fn</span> <span class="pl-en">encrypt</span><span class="pl-kos">(</span><span class="pl-s1">src</span><span class="pl-kos">:</span> <span class="pl-smi">Vec</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span><span class="pl-kos">,</span> <span class="pl-s1">key</span><span class="pl-kos">:</span> <span class="pl-smi">Vec</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span><span class="pl-kos">)</span> -&gt; <span class="pl-smi">Vec</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span> <span class="pl-kos">{</span>
     <span class="pl-k">let</span> <span class="pl-k">mut</span> b = key<span class="pl-kos">.</span><span class="pl-en">iter</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">cycle</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-    s<span class="pl-kos">.</span><span class="pl-en">into_iter</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span>|x| x ^ b<span class="pl-kos">.</span><span class="pl-en">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">unwrap</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">collect</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
+    src<span class="pl-kos">.</span><span class="pl-en">into_iter</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span>|x| x ^ b<span class="pl-kos">.</span><span class="pl-en">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">unwrap</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">collect</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
 <span class="pl-kos">}</span></pre></div>
-<p>Hex view of the file:</p>
-<pre class="notranslate"><code class="notranslate">The puzzle is work in progress.
-Come back a few days later.
+<h2>Hex view of the encrypted file, download the raw file <a href="./res/1.bin">here</a>:</h2>
+<pre class="notranslate"><code class="notranslate">00: 17 2B 45 2F 4F 34 4C 61 16 59 70 65 49 3A 46 31  .+E/O4La.YpeI:F1
+10: 54 16 14 1B 5D 21 20 78 46 60 1A 5F 45 3B 46 5E  T...]! xF`._E;F^
+20: 02 2C 14 68 46 18 44 35 41 58 71 57 59 7B        .,.hF.D5AXqWY{
 </code></pre>
+<h2>Note:</h2>
+<p>The file is a valid TOML file, it's format is as follow:</p>
+<div class="highlight highlight-source-toml"><pre class="notranslate"><span class="pl-smi">secret</span> = <span class="pl-s"><span class="pl-pds">"</span>&lt;valid Base-64 string&gt;<span class="pl-pds">"</span></span></pre></div>
+<h1>The key</h1>
+<p><a href="./answer.html?from=1">Answer it in here</a></p>
 </body>
 </html>
