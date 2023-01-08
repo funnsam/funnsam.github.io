@@ -92,7 +92,7 @@ code, .highlight {
 
 .highlight * {
     font-family     : "CascadiaCode", monospace;
-    margin: 0 !important;
+    margin          : 0 !important;
 }
 
 .highlight {
