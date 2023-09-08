@@ -1,10 +1,12 @@
 @import url('https://fonts.cdnfonts.com/css/cascadia-code');
-@import url('https://fonts.cdnfonts.com/css/roboto');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html {
 	background-color: #352F44;
 	color: #FAF0E6;
 	font-family: 'Roboto', sans-serif;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 body, html {
@@ -69,4 +71,12 @@ code:not(pre > code) {
 
 	position: relative;
 	z-index: -1;
+}
+
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
 }
