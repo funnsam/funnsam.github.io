@@ -14,9 +14,11 @@ let text_size = {};
 
 let dropping = [];
 
+let context = {};
+
 function reload_matrix() {
-	const _container = document.getElementById("matrix_container");
-	if (_container) { _container.remove(); }
+	const _matrix = document.getElementById("matrix");
+	if (_matrix) { _matrix.remove(); }
 
 	w = window.innerWidth;
 	h = window.innerHeight;
@@ -24,61 +26,43 @@ function reload_matrix() {
 	line_h = Math.ceil(h / w * 10);
 	dropping = [];
 	
-	text_size = get_text_size("A", "normal", 12, "Cascadia Code");
-	document.querySelector(':root').style.setProperty("--line-height", `${text_size.height}px`);
 
-	const container = document.createElement("div");
-	container.setAttribute("id", "matrix_container");
-	document.body.appendChild(container);
+	const matrix = document.createElement("canvas");
+	matrix.setAttribute("id", "matrix");
+	document.body.appendChild(matrix);
+	matrix.width  = w;
+	matrix.height = h;
+	context = matrix.getContext("2d");
+	context.font = "normal 12pt Cascadia Code";
+	text_size = get_text_size("0");
 
 	for (let i = 0; i < w / text_size.width; i++) {
-		const text = document.createElement("pre");
-		text.setAttribute("class", "matrix_text")
-		text.appendChild(document.createTextNode(random_str(line_h)));
-		text.style.left = `${i * text_size.width}px`;
-		text.style.opacity = "1";
-
-		const height = Math.floor(Math.random() * (h / text_size.height));
-		text.style.top = `${(height-line_h) * text_size.height}px`;
-		dropping.push(height);
-
-		container.appendChild(text);
+		dropping.push(Math.floor(Math.random() * Math.ceil(h / text_size.height)));
 	}
 }
 
 function tick_matrix() {
-	const container = document.getElementById("matrix_container");
-	let child = container.children;
-	for (let i = child.length-1; i >= 0; i--) {
-		const height = (dropping[i] + 1) % (Math.ceil(h / text_size.height) + line_h);
-		child[i].style.top = `${(height - line_h) * text_size.height}px`;
-		if (height == 0) {
-			child[i].innerText = random_str(line_h);
+	context.fillStyle = "#352F448F";
+	context.fillRect(0, 0, w, h);
+
+	context.fillStyle = "#5C8374";
+	for (let i = 0; i < w / text_size.width; i++) {
+		context.fillText(random_char(), i * text_size.width, dropping[i] * text_size.height);
+
+		if (dropping[i]++ * text_size.height > h && Math.random() > .75) {
+			dropping[i] = 0;
 		}
-		dropping[i] = height;
 	}
 }
 
-// https://stackoverflow.com/a/1349426/16731575
-function random_str(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+function random_char() {
     const charactersLength = characters.length;
-    let counter = 0;
-	while (counter < length) {
-		result += characters.charAt(Math.floor(Math.random() * charactersLength)) + "\n";
-		counter += 1;
-    }
-    return result;
+	return characters.charAt(Math.floor(Math.random() * characters.length));
 }
 
 // https://stackoverflow.com/a/21015393/16731575
-function get_text_size(text, weight, size, ff) {
-	const font = `${weight} ${size}pt ${ff}`;
-
-	const canvas = get_text_size.canvas || (get_text_size.canvas = document.createElement("canvas"));
-	const context = canvas.getContext("2d");
-	context.font = font;
+function get_text_size(text) {
 	const metrics = context.measureText(text);
 	return {
 		width : metrics.width,
