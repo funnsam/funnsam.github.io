@@ -42,7 +42,7 @@ function reload_matrix() {
 }
 
 function tick_matrix() {
-	context.fillStyle = "#352F448F";
+	context.fillStyle = "#352F4480";
 	context.fillRect(0, 0, w, h);
 
 	context.fillStyle = "#5C8374";
