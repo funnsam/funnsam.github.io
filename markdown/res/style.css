@@ -93,8 +93,18 @@ i {
 
 .matrix_text {
 	position: fixed;
-	color: #5C8374;
+	background-image: linear-gradient(to bottom, #5C837400, #5C8374FF);
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	background-size: 100%;
+	background-repeat: repeat;
+
 	font-family: 'Cascadia Code', monospace, sans-serif;
-	font-size: 12;
-	left: 0;
+	font-size: 12pt;
+	line-height: var(--line-height);
+	top: 0;
 }
