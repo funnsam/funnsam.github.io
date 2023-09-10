@@ -5,29 +5,21 @@ window.addEventListener('DOMContentLoaded', () => {
 	setInterval(tick_matrix, 100);
 });
 
-let w = 0;
-let h = 0;
-
-let line_h = 0;
-
-let text_size = {};
-
-let dropping = [];
-
-let context = {};
+let w;
+let h;
+let text_size;
+let dropping;
+let context;
+let matrix;
 
 function reload_matrix() {
-	const _matrix = document.getElementById("matrix");
-	if (_matrix) { _matrix.remove(); }
+	if (matrix) { matrix.remove(); }
 
 	w = window.innerWidth;
 	h = window.innerHeight;
-	layer = 0;
-	line_h = Math.ceil(h / w * 10);
 	dropping = [];
 	
-
-	const matrix = document.createElement("canvas");
+	matrix = document.createElement("canvas");
 	matrix.style.position = "fixed";
 	matrix.style.top  = "0";
 	matrix.style.left = "0";
