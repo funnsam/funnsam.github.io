@@ -13,20 +13,21 @@ let context;
 let matrix;
 
 function reload_matrix() {
-	if (matrix) { matrix.remove(); }
-
 	w = window.innerWidth;
 	h = window.innerHeight;
 	dropping = [];
 	
-	matrix = document.createElement("canvas");
-	matrix.style.position = "fixed";
-	matrix.style.top  = "0";
-	matrix.style.left = "0";
-	matrix.style.zIndex = "-9999";
+	if (matrix == undefined) {
+		matrix = document.createElement("canvas");
+		matrix.style.position = "fixed";
+		matrix.style.top  = "0";
+		matrix.style.left = "0";
+		matrix.style.zIndex = "-9999";
+		document.body.appendChild(matrix);
+	}
+
 	matrix.width  = w;
 	matrix.height = h;
-	document.body.appendChild(matrix);
 
 	context = matrix.getContext("2d");
 	context.font = "normal 12pt Cascadia Code";
@@ -51,7 +52,7 @@ function tick_matrix() {
 	}
 }
 
-const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&*+-/<=>?~";
 function random_char() {
     const charactersLength = characters.length;
 	return characters.charAt(Math.floor(Math.random() * characters.length));

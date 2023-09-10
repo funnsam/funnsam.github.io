@@ -5,10 +5,10 @@ div#root {
 	height: 100%;
 	box-sizing: border-box;
 
-	background: rgba(92, 84, 112, 0.6);
+	background: rgba(92, 84, 112, 0.3);
 	border-radius: 16px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(8px);
 	border: 1px solid #B9B4C7;
 }
 
