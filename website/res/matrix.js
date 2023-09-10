@@ -28,10 +28,14 @@ function reload_matrix() {
 	
 
 	const matrix = document.createElement("canvas");
-	matrix.setAttribute("id", "matrix");
-	document.body.appendChild(matrix);
+	matrix.style.position = "fixed";
+	matrix.style.top  = "0";
+	matrix.style.left = "0";
+	matrix.style.zIndex = "-9999";
 	matrix.width  = w;
 	matrix.height = h;
+	document.body.appendChild(matrix);
+
 	context = matrix.getContext("2d");
 	context.font = "normal 12pt Cascadia Code";
 	text_size = get_text_size("0");

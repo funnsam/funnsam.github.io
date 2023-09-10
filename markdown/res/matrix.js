@@ -8,13 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
 let w = 0;
 let h = 0;
 
-let line_h = 0;
-
 let text_size = {};
-
 let dropping = [];
-
-let context = {};
+let context = {}
 
 function reload_matrix() {
 	const _matrix = document.getElementById("matrix");
@@ -22,16 +18,17 @@ function reload_matrix() {
 
 	w = window.innerWidth;
 	h = window.innerHeight;
-	layer = 0;
-	line_h = Math.ceil(h / w * 10);
 	dropping = [];
 	
-
 	const matrix = document.createElement("canvas");
-	matrix.setAttribute("id", "matrix");
-	document.body.appendChild(matrix);
+	matrix.style.position = "fixed";
+	matrix.style.top  = "0";
+	matrix.style.left = "0";
+	matrix.style.zIndex = "-9999";
 	matrix.width  = w;
 	matrix.height = h;
+	document.body.appendChild(matrix);
+
 	context = matrix.getContext("2d");
 	context.font = "normal 12pt Cascadia Code";
 	text_size = get_text_size("0");
