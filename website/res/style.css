@@ -5,6 +5,7 @@ html {
 	background-color: #0D1B2A;
 	color: #E0E1DD;
 	font-family: "Rubik", sans-serif;
+	font-variant-emoji: emoji;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 
@@ -85,4 +86,11 @@ b {
 
 i {
 	font-style: italic;
+}
+
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
 }
