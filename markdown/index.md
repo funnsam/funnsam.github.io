@@ -1,4 +1,4 @@
-# Hello there 👋, I'm funnsam.
+# Hello there :wave:, I'm funnsam.
 **What am I:**
     - Your average coding red panda
     - Discord user

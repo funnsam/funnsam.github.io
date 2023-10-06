@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 	setTimeout(() => {
-		try {
+		try { // Cross origin abusage
 			document.getElementById("navbar").contentWindow.location.href;
 		} catch(e) {
 			document.getElementById("navbar").src += "";
