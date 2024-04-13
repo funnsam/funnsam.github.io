@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: funnsam/mw@v0.1.1
+      - uses: funnsam/mw@actions-v0.1.1
       - name: Upload page
         uses: actions/upload-pages-artifact@v3
         with:
