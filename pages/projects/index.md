@@ -1,3 +1,7 @@
++++
+title = "My projects"
++++
+
 # My projects \(Note: this list might not be up to date\!\)
 **Future projects:**
     - MC clone

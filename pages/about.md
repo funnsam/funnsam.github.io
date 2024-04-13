@@ -1,3 +1,7 @@
++++
+title = "About"
++++
+
 # About this website
 ## The "MotherFuckingWebsite" part
 This website is perfect. :relieved::nail_care:
