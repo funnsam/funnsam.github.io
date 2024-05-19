@@ -70,6 +70,7 @@ nav > span#nav_right > a {
 }
 
 nav > span > a {
+    transition: all 0.25s;
     max-width: fit-content;
 	display: inline-block;
 	text-align: center;
