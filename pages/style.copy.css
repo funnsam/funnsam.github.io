@@ -14,10 +14,16 @@
 	--margin-xl: 1.6rem;
 	--margin-xxl: 2.263rem;
 
-	--color-primary: #d3ffda;
-	--color-primary-dim: #0b5918;
-	--color-normal: #fbfbfb;
-	--color-normal-dim: #2f3431;
+	--color-primary: #b7e4c7;
+	--color-primary-dim: #2d6a4f;
+	--color-normal: #fff;
+	--color-normal-dim: #2f3e46;
+}
+
+html {
+    min-height: 100%;
+    background: rgb(18,16,14);
+    background: linear-gradient(315deg, rgba(18,16,14,1) 0%, rgba(43,65,98,1) 100%);
 }
 
 html, body {
@@ -25,7 +31,6 @@ html, body {
 	padding: 0;
 	width: 100%;
 	color: var(--color-normal);
-	background-color: var(--color-normal-dim);
 	font-family: "Inter", "Roboto", "Arial", sans-serif;
 	line-height: 1.5;
 }
@@ -34,44 +39,56 @@ nav {
 	margin: 0;
 	padding: 0;
 	position: fixed;
+    display: flex;
 	top: 0;
 	width: 100%;
 	overflow: hidden;
 	z-index: 999999999;
-	border-bottom: var(--margin-xs) solid var(--color-primary);
-	background-color: color-mix(in srgb, var(--color-normal-dim) 50%, transparent);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
+	border-bottom: var(--margin-xxs) solid var(--color-primary);
+    background: rgba(21, 52, 72, 0.35);
+    flex-direction: row;
 }
 
-span#nav_left > a {
-	float: left;
+span#nav_left {
+	align-self: start;
+    max-height: 100%;
 }
 
-span#nav_right > a {
-	float: right;
+span#nav_mid {
+	padding: var(--margin-s) var(--margin-m);
+	align-self: center;
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+span#nav_right {
+	align-self: end;
+    float: right;
 }
 
 nav > span > a {
-	display: block;
+    max-width: fit-content;
+	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	padding: var(--margin-m);
+	padding: var(--margin-s) var(--margin-m);
 	color: var(--color-normal);
+    background: rgba(60, 91, 111, 0.5);
+    border-top: 0.35rem solid transparent;
+    border-bottom: 0.35rem solid transparent;
 }
 
 a {
 	color: var(--color-primary);
 }
 
-nav > span > a:link:hover {
-	text-decoration: underline;
+nav > span > a:hover {
+    background: rgb(60, 91, 111);
+    border-bottom: 0.35rem solid white;
 }
 
 nav > span > a#active {
-	color: var(--color-primary-dim);
-	background-color: var(--color-primary);
-	border-radius: var(--margin-s) var(--margin-s) 0 0;
+    background-color: rgb(118, 171, 174) !important;
 }
 
 div#page_content {

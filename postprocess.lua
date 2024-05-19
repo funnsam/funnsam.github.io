@@ -21,7 +21,7 @@ end
 function generate_final_html(path, depth, body, options)
 	local title_html = ""
 	if options.title ~= nil then
-		title_html = string.format("<title>%s</title>", options.title)
+		title_html = string.format("%s", options.title)
 	end
 
 	local nb_left = ""
@@ -45,6 +45,6 @@ function generate_final_html(path, depth, body, options)
 	end
 
 	return string.format([[
-<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script src="https://funnsam.github.io/twemoji/dist/twemoji.min.js" crossorigin="anonymous"></script>%s</head><body><nav><span id="nav_left">%s</span><span id="nav_right">%s</span></nav><div id="page_content">%s</div></body></html>
-]], string.rep("../", depth), title_html, nb_left, nb_right, body)
+<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script src="https://funnsam.github.io/twemoji/dist/twemoji.min.js" crossorigin="anonymous"></script><title>%s</title></head><body><nav><span id="nav_left">%s</span><span id="nav_mid">%s</span><span id="nav_right">%s</span></nav><div id="page_content">%s</div></body></html>
+]], string.rep("../", depth), title_html, nb_left, options.title, nb_right, body)
 end
