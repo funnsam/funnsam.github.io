@@ -51,18 +51,21 @@ nav {
 
 span#nav_left {
 	align-self: start;
-    max-height: 100%;
+    flex: 1;
 }
 
 span#nav_mid {
 	padding: var(--margin-s) var(--margin-m);
 	align-self: center;
     text-align: center;
-    flex: 1 0 auto;
 }
 
 span#nav_right {
 	align-self: end;
+    flex: 1;
+}
+
+nav > span#nav_right > a {
     float: right;
 }
 
