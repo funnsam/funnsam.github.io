@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
-	/*
-	LIGHT:
-	 2^(x + 2)
-	-----------
-	    10
-	*/
-	--margin-xs: 0.4rem;
-	--margin-s: 0.566rem;
-	--margin-m: 0.8rem;
-	--margin-l: 1.131rem;
-	--margin-xl: 1.6rem;
-	--margin-xxl: 2.263rem;
+    /* tailwind m-1, m-2, m-3, .. */
+	--space-xs: 0.25rem;
+	--space-s: 0.5rem;
+	--space-m: 0.75rem;
+	--space-l: 1rem;
+	--space-xl: 1.25rem;
+	--space-xxl: 1.5rem;
+
+    --color-text: #cad3f5;
 
 	--color-primary: #b7e4c7;
 	--color-primary-dim: #2d6a4f;
@@ -22,105 +19,142 @@
 
 html {
     min-height: 100%;
-    background: rgb(18,16,14);
-    background: linear-gradient(315deg, rgba(18,16,14,1) 0%, rgba(43,65,98,1) 100%);
+    background: #24273a;
 }
 
 html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	color: var(--color-normal);
+	color: var(--color-text);
 	font-family: "Inter", "Roboto", "Arial", sans-serif;
 	line-height: 1.5;
 }
 
+/* navbar */
 nav {
-	margin: 0;
-	padding: 0;
-	position: fixed;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 999999999;
+    border-bottom: var(--space-xxs) solid var(--color-primary);
+    background: #363a4f;
+}
+
+#navinner, #navham {
     display: flex;
-	top: 0;
-	width: 100%;
-	overflow: hidden;
-	z-index: 999999999;
-	border-bottom: var(--margin-xxs) solid var(--color-primary);
-    background: rgba(21, 52, 72, 0.35);
     flex-direction: row;
+    width: 100%;
 }
 
-span#nav_left {
-	align-self: start;
-    flex: 1;
-}
+#navinner > span > a, #hamburger {
+    outline: none;
+    border: none;
 
-span#nav_mid {
-	padding: var(--margin-s) var(--margin-m);
-	align-self: center;
-    text-align: center;
-}
-
-span#nav_right {
-	align-self: end;
-    flex: 1;
-}
-
-nav > span#nav_right > a {
-    float: right;
-}
-
-nav > span > a {
     transition: all 0.25s;
-    max-width: fit-content;
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	padding: var(--margin-s) var(--margin-m);
-	color: var(--color-normal);
-    background: rgba(60, 91, 111, 0.5);
-    border-top: 0.35rem solid transparent;
-    border-bottom: 0.35rem solid transparent;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    background: #494d64;
+    display: inline-block;
+    padding: var(--space-s) var(--space-m);
+}
+
+#navinner > span > a:hover, #hamburger:hover {
+    background: #7f85a0;
+}
+
+#navinner > span > a#active, #navinner > span > a:active, #hamburger:active {
+    background-color: #5b6078 !important;
+}
+
+#hamlogo {
+    height: 100%;
+    object-fit: contain;
+}
+
+#hamburger {
+    align-self: end;
+}
+
+/* navbar landscape */
+@media only screen and not (orientation: portrait) {
+    #navinner > span#nav_left {
+        align-self: start;
+        flex: 1;
+    }
+
+    #navinner > span#nav_right {
+        align-self: end;
+        flex: 1;
+    }
+
+    #navinner > span#nav_right > a {
+        float: right;
+    }
+
+    #navinner > span > a {
+        max-width: fit-content;
+    }
+
+    #navham {
+        display: none;
+    }
+}
+
+/* navbar portrait */
+@media only screen and (orientation: portrait) {
+    #navinner {
+        margin-top: var(--space-s);
+
+        display: none;
+        flex-direction: column;
+    }
+
+    #navinner > span#nav_right {
+        margin-top: var(--space-s);
+    }
+
+    #navinner > span > a {
+        display: block;
+        padding: var(--space-s) 0;
+    }
+}
+
+/* page content */
+div#page_content {
+    margin-top: calc(var(--space-m) * 2 + var(--space-xs) + var(--space-s));
+    padding: var(--space-l);
 }
 
 a {
-	color: var(--color-primary);
-}
-
-nav > span > a:hover {
-    background: rgb(60, 91, 111);
-    border-bottom: 0.35rem solid white;
-}
-
-nav > span > a#active {
-    background-color: rgb(118, 171, 174) !important;
-}
-
-div#page_content {
-	margin-top: calc(var(--margin-m) * 2 + var(--margin-xs) + var(--margin-s));
-	padding: var(--margin-l);
+	color: #8aadf4;
 }
 
 h1 {
 	margin-top: 0;
-	margin-bottom: var(--margin-l);
+	margin-bottom: var(--space-l);
 }
 
 h2 {
 	margin-top: 0;
-	margin-bottom: var(--margin-m);
+	margin-bottom: var(--space-m);
 }
 
 h3, h4, h5, h6 {
 	margin-top: 0;
-	margin-bottom: var(--margin-s);
+	margin-bottom: var(--space-s);
 }
 
 p {
 	text-align: justify;
 	margin-top: 0;
-	margin-bottom: var(--margin-m);
+	margin-bottom: var(--space-m);
 }
 
 ul {
-	margin: var(--margin-xs) 0;
+	margin: var(--space-xs) 0;
 }

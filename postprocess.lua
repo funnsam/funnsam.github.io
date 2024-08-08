@@ -45,6 +45,6 @@ function generate_final_html(path, depth, body, options)
 	end
 
 	return string.format([[
-<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script src="https://funnsam.github.io/twemoji/dist/twemoji.min.js" crossorigin="anonymous"></script><title>%s</title></head><body><nav><span id="nav_left">%s</span><span id="nav_mid">%s</span><span id="nav_right">%s</span></nav><div id="page_content">%s</div></body></html>
-]], string.rep("../", depth), title_html, nb_left, options.title, nb_right, body)
+<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script defer src="%sscript.js"></script><script src="https://funnsam.github.io/twemoji/dist/twemoji.min.js" crossorigin="anonymous"></script><title>%s</title></head><body><nav><div id="navham"><button id="hamburger">More</button></div><div id="navinner"><span id="nav_left">%s</span><span id="nav_right">%s</span></div></nav><div id="page_content">%s</div></body></html>
+]], string.rep("../", depth), string.rep("../", depth), title_html, nb_left, nb_right, body)
 end
