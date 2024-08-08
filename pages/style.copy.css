@@ -38,8 +38,9 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
+    max-height: 100%;
     overflow: hidden;
-    z-index: 999999999;
+    z-index: 99;
     border-bottom: var(--space-xxs) solid var(--color-primary);
     background: #363a4f;
 }
@@ -71,13 +72,29 @@ nav {
     background-color: #5b6078 !important;
 }
 
-#hamlogo {
+a:has(.logo) {
+    display:flex;
+    align-items: center;
+    height: 2rem;
+    margin: auto var(--space-m);
+    gap: var(--space-s);
+    text-decoration: none;
+}
+
+.logo {
     height: 100%;
     object-fit: contain;
+    border-radius: 50%;
+}
+
+a:has(.logo)::after {
+    content: "funn's homie";
+    color: var(--color-text);
 }
 
 #hamburger {
     align-self: end;
+    margin-left: auto;
 }
 
 /* navbar landscape */
@@ -107,6 +124,10 @@ nav {
 
 /* navbar portrait */
 @media only screen and (orientation: portrait) {
+    nav {
+        overflow: auto;
+    }
+
     #navinner {
         margin-top: var(--space-s);
 
@@ -121,6 +142,10 @@ nav {
     #navinner > span > a {
         display: block;
         padding: var(--space-s) 0;
+    }
+
+    #navinner > a:has(.logo) {
+        display: none;
     }
 }
 
