@@ -1,9 +1,5 @@
 -- This is just https://github.com/funnsam/mw/blob/main/postprocess.lua, with some changes
 
-local function get_rel_path(path)
-	return string.sub(path, #project_base + #"/pages/" + 1)
-end
-
 local function to_rel_url(url, depth)
 	if string.match(url, "^.+://.*") or string.match(url, "^%./.*") or string.match(url, "^/.*") then
 		return url
@@ -17,12 +13,12 @@ local function to_rel_url(url, depth)
 	end
 end
 
-function generate_navside(path, depth, navside)
+function generate_navside(md_path, depth, navside)
 	local nbs = "<span>"
 	for item = 1, #navside do
 		local item = navside[item]
 
-        if item.md == get_rel_path(path) then
+        if item.md ~= nil and "pages/" .. item.md == path_relative(md_path) then
             nbs = nbs .. string.format("<a class=\"active\">%s</a>", item.name)
         else
             nbs = nbs .. string.format("<a href=\"%s\">%s</a>", to_rel_url(item.url, depth), item.name)
@@ -32,7 +28,7 @@ function generate_navside(path, depth, navside)
     return nbs .. "</span>"
 end
 
-function generate_final_html(path, depth, body, options)
+function generate_final_html(md_path, out_path, depth, body, options)
 	local title_html = ""
 	if options.title ~= nil then
 		title_html = string.format("%s", options.title)
@@ -40,7 +36,7 @@ function generate_final_html(path, depth, body, options)
 
     local navbar_items = ""
 	for i = 1, #navbar.items do
-        navbar_items = navbar_items .. generate_navside(path, depth, navbar.items[i])
+        navbar_items = navbar_items .. generate_navside(md_path, depth, navbar.items[i])
     end
 
     if options.is_blog then
