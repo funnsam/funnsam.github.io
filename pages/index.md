@@ -1,10 +1,10 @@
 +++
-title = "funnsam's home"
+title = "funn's homie"
 +++
 
 # Hello there :wave:, I'm funnsam.
 ## What am I
-- Your average coding red panda
+- An average coding red panda
 - Discord user
 - $18\text{ years} - n\text{ months}$ old
 - Lives in Hong Kong

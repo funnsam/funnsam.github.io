@@ -41,7 +41,6 @@ nav {
     max-height: 100%;
     overflow: hidden;
     z-index: 99;
-    border-bottom: var(--space-xxs) solid var(--color-primary);
     background: #363a4f;
 }
 
@@ -49,6 +48,7 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
+    gap: var(--space-s);
 }
 
 #navinner > span > a, #hamburger {
@@ -68,17 +68,18 @@ nav {
     background: #7f85a0;
 }
 
-#navinner > span > a#active, #navinner > span > a:active, #hamburger:active {
+#navinner > span > a.active, #navinner > span > a:active, #hamburger:active, #hamburger.active {
     background-color: #5b6078 !important;
 }
 
 a:has(.logo) {
     display:flex;
     align-items: center;
-    height: 2rem;
-    margin: auto var(--space-m);
-    gap: var(--space-s);
+    height: var(--space-xxl);
+    margin: auto var(--space-s);
+    gap: var(--space-xs);
     text-decoration: none;
+    flex-grow: 1;
 }
 
 .logo {
@@ -97,20 +98,10 @@ a:has(.logo)::after {
     margin-left: auto;
 }
 
-/* navbar landscape */
-@media only screen and not (orientation: portrait) {
-    #navinner > span#nav_left {
-        align-self: start;
-        flex: 1;
-    }
-
-    #navinner > span#nav_right {
+/* navbar pc */
+@media only screen and not (max-width: 600px) {
+    #navinner > span {
         align-self: end;
-        flex: 1;
-    }
-
-    #navinner > span#nav_right > a {
-        float: right;
     }
 
     #navinner > span > a {
@@ -122,20 +113,15 @@ a:has(.logo)::after {
     }
 }
 
-/* navbar portrait */
-@media only screen and (orientation: portrait) {
+/* navbar phone */
+@media only screen and (max-width: 600px) {
     nav {
         overflow: auto;
     }
 
     #navinner {
-        margin-top: var(--space-s);
-
         display: none;
         flex-direction: column;
-    }
-
-    #navinner > span#nav_right {
         margin-top: var(--space-s);
     }
 

@@ -1,7 +1,9 @@
 const nav = document.getElementById("navinner");
+const ham = document.getElementById("hamburger");
 
-document.getElementById("hamburger").onclick = () => {
+ham.onclick = () => {
     nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    ham.classList.toggle("active");
 };
 
 screen.orientation.onchange = () => {

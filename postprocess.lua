@@ -17,6 +17,20 @@ local function to_rel_url(url, depth)
 	end
 end
 
+function generate_navside(path, depth, navside)
+	local nbs = "<span>"
+	for item = 1, #navside do
+		local item = navside[item]
+
+        if item.md == get_rel_path(path) then
+            nbs = nbs .. string.format("<a class=\"active\">%s</a>", item.name)
+        else
+            nbs = nbs .. string.format("<a href=\"%s\">%s</a>", to_rel_url(item.url, depth), item.name)
+        end
+    end
+
+    return nbs .. "</span>"
+end
 
 function generate_final_html(path, depth, body, options)
 	local title_html = ""
@@ -24,28 +38,15 @@ function generate_final_html(path, depth, body, options)
 		title_html = string.format("%s", options.title)
 	end
 
-	local nb_left = ""
-	for item = 1, #navbar.left do
-		local item = navbar.left[item]
-
-        if item.md == get_rel_path(path) then
-            nb_left = nb_left .. string.format("<a id=\"active\">%s</a>", item.name)
-        else
-            nb_left = nb_left .. string.format("<a href=\"%s\">%s</a>", to_rel_url(item.url, depth), item.name)
-        end
+    local navbar_items = ""
+	for i = 1, #navbar.items do
+        navbar_items = navbar_items .. generate_navside(path, depth, navbar.items[i])
     end
 
-	local nb_right = ""
-	for item = 1, #navbar.right do
-		local item = navbar.right[item]
-		if item.md == get_rel_path(path) then
-			nb_right = nb_right .. string.format("<a id=\"active\">%s</a>", item.name)
-		else
-			nb_right = nb_right .. string.format("<a href=\"%s\">%s</a>", to_rel_url(item.url, depth), item.name)
-		end
-	end
+    if options.is_blog then
+    end
 
 	return string.format([[
-<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script defer src="%sscript.js"></script><title>%s</title></head><body><nav><div id="navham"><a href="/"><img class="logo" src="%s" alt="Logo"></a><button id="hamburger">More</button></div><div id="navinner"><a href="/"><img class="logo" src="%s" alt="Logo"></a><span id="nav_left">%s</span><span id="nav_right">%s</span></div></nav><div id="page_content">%s</div></body></html>
-]], string.rep("../", depth), string.rep("../", depth), title_html, navbar.logo, navbar.logo, nb_left, nb_right, body)
+<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script defer src="%sscript.js"></script><title>%s</title></head><body><nav><div id="navham"><a href="/"><img class="logo" src="%s" alt="Logo"></a><button id="hamburger">More</button></div><div id="navinner"><a href="/"><img class="logo" src="%s" alt="Logo"></a>%s</div></nav><div id="page_content">%s</div></body></html>
+]], string.rep("../", depth), string.rep("../", depth), title_html, navbar.logo, navbar.logo, navbar_items, body)
 end
