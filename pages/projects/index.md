@@ -8,7 +8,8 @@ No ideas yet :man_shrugging:
 # Active projects
 - [Gameboy emulator](https://github.com/funnsam/gamewaifu)
 - [RISC-V emulator](https://github.com/funnsam/rv64)
-- [My own SSA](https://github.com/funnsam/my_ssa)
+- [My own SSA](https://github.com/funnsam/funnssa)
+- [My own website generater](https://github.com/funnsam/mw)
 
 # Old projects
 - [URCL to LLVM](https://github.com/funnsam/urcl-llvm), for [x86-64 URCL-OS](https://github.com/funnsam/urclos-barebones)

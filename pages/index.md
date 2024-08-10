@@ -1,7 +1,3 @@
-+++
-title = "funn's homie"
-+++
-
 # Hello there :wave:, I'm funnsam.
 ## What am I
 - An average coding red panda

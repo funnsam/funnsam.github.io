@@ -1,6 +1,6 @@
 +++
-title = "Blog index"
+title = "Blog post list"
 is_blog = true
 +++
 
-Welcome to my blog!
+# Welcome to my blog!
