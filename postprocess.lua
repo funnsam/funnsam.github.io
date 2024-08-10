@@ -86,6 +86,6 @@ function generate_final_html(md_path, out_path, depth, body, options)
     end
 
 	return string.format([[
-<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script defer src="%sscript.js"></script><title>%s</title></head><body><nav><div id="navham"><a href="/"><img class="logo" src="%s" alt="Logo"></a><button id="hamburger">More</button></div><div id="navinner"><a href="/"><img class="logo" src="%s" alt="Logo"></a>%s</div></nav><div id="page_content">%s</div></body></html>
+<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="%sstyle.css"><script defer src="%sscript.js"></script><title>%s</title></head><body><script>0</script><nav><div id="navham"><a href="/"><img class="logo" src="%s" alt="Logo"></a><button id="hamburger">More</button></div><div id="navinner"><a href="/"><img class="logo" src="%s" alt="Logo"></a>%s</div></nav><div id="page_content">%s</div></body></html>
 ]], ("../"):rep(depth), ("../"):rep(depth), title, config.navbar.logo, config.navbar.logo, navbar_items, body)
 end

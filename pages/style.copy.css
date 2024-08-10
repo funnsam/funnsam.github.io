@@ -98,23 +98,8 @@ a:has(.logo)::after {
     margin-left: auto;
 }
 
-/* navbar pc */
-@media only screen and not (max-width: 600px) {
-    #navinner > span {
-        align-self: end;
-    }
-
-    #navinner > span > a {
-        max-width: fit-content;
-    }
-
-    #navham {
-        display: none;
-    }
-}
-
 /* navbar phone */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
     nav {
         overflow: auto;
     }
@@ -135,10 +120,24 @@ a:has(.logo)::after {
     }
 }
 
+/* navbar pc */
+@media only screen and (min-width: 600px) {
+    #navinner > span {
+        align-self: end;
+    }
+
+    #navinner > span > a {
+        max-width: fit-content;
+    }
+
+    #navham {
+        display: none;
+    }
+}
+
 /* page content */
 div#page_content {
     margin-top: calc(var(--space-m) * 2 + var(--space-xs) + var(--space-s));
-    padding: var(--space-l);
 }
 
 a {
@@ -170,6 +169,27 @@ ul {
 	margin: var(--space-xs) 0;
 }
 
+/* page content phone */
+@media only screen and (max-width: 599px) {
+    div#page_content {
+        padding: var(--space-l);
+    }
+}
+
+/* page content smol pc */
+@media only screen and (min-width: 600px) {
+    div#page_content {
+        padding: var(--space-xl);
+    }
+}
+
+/* page content pc */
+@media only screen and (min-width: 1200px) {
+    div#page_content {
+        padding: var(--space-xxl);
+    }
+}
+
 /* blog index */
 .post {
     margin-bottom: var(--space-m);
@@ -193,8 +213,16 @@ ul {
     color: #b8c0e0;
     font-size: 0.85rem;
     margin: auto 0;
+    text-align: right;
 }
 
 .post .tags {
     font-size: 0.85rem;
+}
+
+/* navbar small screen */
+@media only screen and (max-width: 25rem) {
+    .post .top {
+        flex-direction: column;
+    }
 }
