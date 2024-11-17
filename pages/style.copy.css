@@ -138,6 +138,9 @@ a:has(.logo)::after {
 /* page content */
 div#page_content {
     margin-top: calc(var(--space-m) * 2 + var(--space-xs) + var(--space-s));
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a {
