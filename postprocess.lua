@@ -72,7 +72,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
         gen_posts = {}
         post_idx_by_cat = {}
 
-        body = body .. [[<style>@import url("index.css");</style><div id=\"posts_by_date\"><h2>List of blog posts by date</h2>]]
+        body = body .. [[<style>@import url("index.css");</style><div id="posts_by_date"><h2>List of blog posts by date</h2>]]
         for i, p in ipairs(posts) do
             for _, t in ipairs(p.options.tags) do
                 if post_idx_by_cat[t] == nil then
