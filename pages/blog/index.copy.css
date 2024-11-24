@@ -1,0 +1,40 @@
+.post {
+    margin-bottom: var(--space-m);
+    padding: var(--space-m);
+    background-color: #363a4f;
+    border-radius: var(--space-s);
+}
+
+.post .top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.post .title {
+    font-size: 1.25rem;
+    flex-grow: 1;
+}
+
+.post .date {
+    color: #b8c0e0;
+    font-size: 0.85rem;
+    margin: auto 0;
+    text-align: right;
+}
+
+.post .tags {
+    font-size: 0.85rem;
+}
+
+/* small screen */
+@media only screen and (max-width: 25rem) {
+    .post .top {
+        flex-direction: column;
+    }
+}
+
+.tag {
+    color: var(--text-color);
+    text-decoration: none;
+}

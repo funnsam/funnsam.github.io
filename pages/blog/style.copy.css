@@ -1,0 +1,27 @@
+.blog_header {
+    border-bottom: 1px solid var(--color-text);
+    margin-bottom: var(--space-xxl);
+    text-align: center;
+}
+
+.blog_header > h1 {
+    margin: 0;
+}
+
+.blog_header > div {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-l);
+    justify-content: space-evenly;
+    width: 50%;
+    margin: var(--space-s) auto;
+}
+
+.blog_header > div > div > span:first-child {
+    margin-right: var(--space-xs);
+}
+
+.tag {
+    color: var(--text-color);
+    text-decoration: none;
+}
