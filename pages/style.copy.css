@@ -9,17 +9,12 @@
 	--space-xl: 1.25rem;
 	--space-xxl: 1.5rem;
 
-    --color-text: #cad3f5;
-
-	--color-primary: #b7e4c7;
-	--color-primary-dim: #2d6a4f;
-	--color-normal: #fff;
-	--color-normal-dim: #2f3e46;
+    --color-text: #cdd6f4;
 }
 
 html {
     min-height: 100%;
-    background: #24273a;
+    background: #1e1e2e;
 }
 
 html, body {
@@ -33,15 +28,34 @@ html, body {
 
 /* navbar */
 nav {
+    position: sticky;
     margin: 0;
-    padding: 0;
-    position: fixed;
+    padding: var(--space-s);
     top: 0;
     width: 100%;
     max-height: 100%;
     overflow: hidden;
     z-index: 99;
-    background: #363a4f;
+    box-sizing: border-box;
+}
+
+#navbg {
+    position: absolute;
+    inset: 0;
+    height: 200%;
+    backdrop-filter: blur(16px);
+    mask-image: linear-gradient(
+        to bottom,
+        black 0% 50%,
+        transparent 50% 100%
+    );
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        #1e1e2eff 0%,
+        #1e1e2e3f 24px
+    );
+    z-index: -1000;
 }
 
 #navinner, #navham {
@@ -57,23 +71,30 @@ nav {
 
     transition: all 0.25s;
     text-align: center;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: var(--space-xs);
     color: var(--color-text);
-    background: #494d64;
     display: inline-block;
+    background: transparent;
     padding: var(--space-s) var(--space-m);
 }
 
-#navinner > span > a:hover, #hamburger:hover {
-    background: #7f85a0;
+#navinner > span > a {
+    background: #313244;
 }
 
-#navinner > span > a.active, #navinner > span > a:active, #hamburger:active, #hamburger.active {
-    background-color: #5b6078 !important;
+#navinner > span > a:hover, #hamburger:hover {
+    text-decoration-color: #a6e3a1;
+}
+
+#navinner > span > a.active, #navinner > span > a:active, #hamburger.active, #hamburger:active {
+    background: #45475a;
+    text-decoration-color: #a6e3a1;
 }
 
 a:has(.logo) {
-    display:flex;
+    display: flex;
     align-items: center;
     height: var(--space-xxl);
     margin: auto var(--space-s);
@@ -100,14 +121,11 @@ a:has(.logo)::after {
 
 /* navbar phone */
 @media only screen and (max-width: 599px) {
-    nav {
-        overflow: auto;
-    }
-
     #navinner {
         display: none;
         flex-direction: column;
         margin-top: var(--space-s);
+        overflow: auto;
     }
 
     #navinner > span > a {
@@ -137,14 +155,20 @@ a:has(.logo)::after {
 
 /* page content */
 div#page_content {
-    margin-top: calc(var(--space-m) * 2 + var(--space-xs) + var(--space-s));
     max-width: 75rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 a {
-	color: #8aadf4;
+	color: #89b4fa;
+    text-decoration: underline;
+    text-decoration-color: #89b4fa;
+    text-decoration-style: dotted;
+}
+
+a:hover, a:active {
+    text-decoration-style: solid;
 }
 
 h1 {
