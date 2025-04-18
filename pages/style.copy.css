@@ -202,7 +202,7 @@ h3, h4, h5, h6 {
 }
 
 p {
-	text-align: justify;
+	text-wrap: pretty;
 	margin-top: 0;
 	margin-bottom: var(--space-m);
 }
