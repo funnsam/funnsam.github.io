@@ -17,9 +17,9 @@ function generate_navside(md_path, depth, navside)
 	local nbs = "<span>"
 	for _, item in ipairs(navside) do
         if item.md ~= nil and item.md == path_relative_to(md_path, pages_base) then
-            nbs = nbs .. string.format("<a class=\"active\">%s</a>", item.name)
+            nbs = nbs .. string.format("<a class=\"active\"><span>%s</span></a>", item.name)
         else
-            nbs = nbs .. string.format("<a href=\"%s\">%s</a>", to_rel_url(item.url, depth), item.name)
+            nbs = nbs .. string.format("<a href=\"%s\"><span>%s</span></a>", to_rel_url(item.url, depth), item.name)
         end
     end
 
@@ -131,7 +131,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
             <div id="navbg"></div>
             <div id="navham">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
-                <button id="hamburger">More</button>
+                <button id="hamburger"><span>More</span></button>
             </div>
             <div id="navinner">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>

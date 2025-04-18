@@ -43,7 +43,7 @@ nav {
     position: absolute;
     inset: 0;
     height: 200%;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
     mask-image: linear-gradient(
         to bottom,
         black 0% 50%,
@@ -55,33 +55,33 @@ nav {
         #1e1e2eff 0%,
         #1e1e2e3f 24px
     );
-    z-index: -1000;
+    z-index: -1;
 }
 
 #navinner, #navham {
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: var(--space-s);
 }
 
 #navinner > span > a, #hamburger {
     outline: none;
     border: none;
-
+    height: 100%;
     transition: all 0.25s;
-    text-align: center;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: var(--space-xs);
     color: var(--color-text);
-    display: inline-block;
     background: transparent;
-    padding: var(--space-s) var(--space-m);
+    padding: var(--space-s);
+
+    display: inline-flex;
+    box-sizing: border-box;
 }
 
-#navinner > span > a {
-    background: #313244;
+#navinner > span > a > span, #hamburger > span {
+    margin: auto;
 }
 
 #navinner > span > a:hover, #hamburger:hover {
@@ -89,18 +89,20 @@ nav {
 }
 
 #navinner > span > a.active, #navinner > span > a:active, #hamburger.active, #hamburger:active {
-    background: #45475a;
+    background: #313244;
+}
+
+#navinner > span > a.active, #navinner > span > a:active {
     text-decoration-color: #a6e3a1;
 }
 
 a:has(.logo) {
+    text-decoration: none;
+    height: 100%;
+    margin-right: auto;
     display: flex;
     align-items: center;
-    height: var(--space-xxl);
-    margin: auto var(--space-s);
-    gap: var(--space-xs);
-    text-decoration: none;
-    flex-grow: 1;
+    gap: var(--space-s);
 }
 
 .logo {
@@ -110,17 +112,18 @@ a:has(.logo) {
 }
 
 a:has(.logo)::after {
-    content: "funn's homie";
+    content: "funn's home";
+    font-size: 1.25em;
+    font-weight: 450;
     color: var(--color-text);
-}
-
-#hamburger {
-    align-self: end;
-    margin-left: auto;
 }
 
 /* navbar phone */
 @media only screen and (max-width: 599px) {
+    #navham {
+        height: 2.5em;
+    }
+
     #navinner {
         display: none;
         flex-direction: column;
@@ -128,9 +131,14 @@ a:has(.logo)::after {
         overflow: auto;
     }
 
+    #navinner > span {
+        border-top: 1px solid #a6adc8;
+    }
+
     #navinner > span > a {
         display: block;
         padding: var(--space-s) 0;
+        padding-left: 10%;
     }
 
     #navinner > a:has(.logo) {
@@ -140,12 +148,19 @@ a:has(.logo)::after {
 
 /* navbar pc */
 @media only screen and (min-width: 600px) {
+    #navinner {
+        height: 2.5em;
+        gap: var(--space-s);
+    }
+
     #navinner > span {
         align-self: end;
+        height: 100%;
     }
 
     #navinner > span > a {
         max-width: fit-content;
+        text-align: center;
     }
 
     #navham {
