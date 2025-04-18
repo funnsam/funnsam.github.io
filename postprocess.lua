@@ -96,7 +96,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
 
             local date = date_to_string(p.options.date)
 
-            gen_posts[i] = string.format("<div class=\"post\"><div class=\"top\"><a href=\"%s\" class=\"title\">%s</a><span class=\"date\">📅 %s</span></div><span class=\"tags\">🏷️ %s</span></div>", path_relative_to(p.out_path, path_parent(out_path)), sanitize(p.options.title), date, gen_tags_string(p.options.tags))
+            gen_posts[i] = string.format("<div class=\"post\"><div class=\"top\"><a href=\"%s\" class=\"title\">%s</a><span class=\"date\"><i class=\"fa-solid fa-calendar-days\"></i> %s</span></div><span class=\"tags\"><i class=\"fa-solid fa-tags\"></i> %s</span></div>", path_relative_to(p.out_path, path_parent(out_path)), sanitize(p.options.title), date, gen_tags_string(p.options.tags))
             body = body .. gen_posts[i]
         end
 
@@ -112,7 +112,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
         end)
 
         for _, t in ipairs(sorted) do
-            body = body .. '<h3 id="tag_' .. sanitize(t.tag) .. '">🏷️ ' .. sanitize(t.tag) .. "</h3>"
+            body = body .. '<h3 id="tag_' .. sanitize(t.tag) .. '"><i class="fa-solid fa-tag"></i> ' .. sanitize(t.tag) .. "</h3>"
             for _, v in ipairs(t.posts) do
                 body = body .. gen_posts[v]
             end
@@ -123,7 +123,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
         local date = date_to_string(options.date)
 
         body = string.format([[
-<style>@import url("style.css");</style><div class="blog_header"><h1>%s</h1><div><div><span>🏷️</span><span>%s</span></div><div><span>📅</span><span>%s</span></div></div></div>
+<style>@import url("style.css");</style><div class="blog_header"><h1>%s</h1><div><div><i class="fa-solid fa-tag"></i> %s</div><div><i class="fa-solid fa-calendar-days"></i> %s</div></div></div>
 ]], sanitize(options.title), gen_tags_string(options.tags), date) .. body
     end
 

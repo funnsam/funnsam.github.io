@@ -17,10 +17,6 @@
     margin: var(--space-s) auto;
 }
 
-.blog_header > div > div > span:first-child {
-    margin-right: var(--space-xs);
-}
-
 .tag {
     color: var(--text-color);
     text-decoration: none;
