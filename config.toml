@@ -4,10 +4,11 @@ items = [
     [
         { name = "My Projects", url = "projects/", md = "projects/index.md" },
         { name = "Blog", url = "blog/", md = "blog/index.md" },
-    ], [
-	    { name = "Github", url = "https://github.com/funnsam" },
-        { name = "Discord", url = "https://discord.com/invite/Vwwe7nzH" },
-        { name = "Twitter", url = "https://x.com/funnsam1" },
-        { name = "Threads", url = "https://www.threads.net/@funn.is_a.dev" },
     ],
+]
+socials = [
+    { icon = "github", url = "https://github.com/funnsam" },
+    { icon = "discord", url = "https://discord.com/invite/Vwwe7nzH" },
+    { icon = "twitter", url = "https://x.com/funnsam1" },
+    { icon = "threads", url = "https://www.threads.net/@funn.is_a.dev" },
 ]

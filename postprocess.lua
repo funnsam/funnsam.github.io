@@ -26,6 +26,16 @@ function generate_navside(md_path, depth, navside)
     return nbs .. "</span>"
 end
 
+function generate_socials()
+    local soc = ""
+
+    for _, i in ipairs(config.navbar.socials) do
+        soc = soc .. string.format("<a href=\"%s\"><span class=\"fa-brands fa-%s\">%s</span></a>", i.url, i.icon, i.icon)
+    end
+
+    return soc
+end
+
 function sanitize(s)
     return s:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;"):gsub('"', "&quot;")
 end
@@ -62,6 +72,8 @@ function generate_final_html(md_path, out_path, depth, body, options)
 	for _, i in ipairs(config.navbar.items) do
         navbar_items = navbar_items .. generate_navside(md_path, depth, i)
     end
+
+    local social_items = generate_socials()
 
     if options.is_blog_list then
         local posts = search_in(path_join(project_base, "blogs"), path_parent(out_path), depth)
@@ -121,8 +133,11 @@ function generate_final_html(md_path, out_path, depth, body, options)
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="%sstyle.css">
-        <script defer src="%sscript.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/fontawesome.min.js" crossorigin="anonymous"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/solid.min.js" crossorigin="anonymous"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/brands.min.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/style.css">
+        <script defer src="/script.js"></script>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
         <title>%s</title>
     </head>
@@ -132,15 +147,16 @@ function generate_final_html(md_path, out_path, depth, body, options)
             <div id="navbg"></div>
             <div id="navham">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
-                <button id="hamburger"><span>More</span></button>
+                <button id="hamburger"><span class="fa-solid fa-bars"></span></button>
             </div>
             <div id="navinner">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
                 %s
+                <span class="social">%s</span>
             </div>
         </nav>
         <div id="page_content">%s</div>
     </body>
 </html>
-]], ("../"):rep(depth), ("../"):rep(depth), sanitize(title), config.navbar.logo, config.navbar.logo, navbar_items, body)
+]], sanitize(title), config.navbar.logo, config.navbar.logo, navbar_items, social_items, body)
 end
