@@ -123,6 +123,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="%sstyle.css">
         <script defer src="%sscript.js"></script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
         <title>%s</title>
     </head>
     <body>
