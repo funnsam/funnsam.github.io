@@ -6,5 +6,8 @@ items = [
         { name = "Blog", url = "blog/", md = "blog/index.md" },
     ], [
 	    { name = "Github", url = "https://github.com/funnsam" },
+        { name = "Discord", url = "https://discord.com/invite/Vwwe7nzH" },
+        { name = "Twitter", url = "https://x.com/funnsam1" },
+        { name = "Threads", url = "https://www.threads.net/@funn.is_a.dev" },
     ],
 ]
