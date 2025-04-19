@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+@property --base-nav {
+    syntax: "<color>";
+    initial-value: #fff;
+    inherits: false;
+}
+
 :root {
     /* tailwind m-1, m-2, m-3, .. */
 	--space-xs: 0.25rem;
@@ -47,6 +53,9 @@ nav {
 }
 
 #navbg {
+    --base-nav: var(--base);
+    transition: --base-nav 0.25s;
+
     position: absolute;
     inset: 0;
     height: 200%;
@@ -59,7 +68,7 @@ nav {
     pointer-events: none;
     background: linear-gradient(
         to bottom,
-        var(--base) 0%,
+        var(--base-nav) 0%,
         transparent 24px
     );
     z-index: -1;
@@ -80,6 +89,7 @@ nav {
     color: var(--text);
     background: transparent;
     padding: var(--space-s);
+    cursor: pointer;
 
     display: inline-flex;
     box-sizing: border-box;
@@ -90,12 +100,11 @@ nav {
 }
 
 #navinner > span > a:hover, nav button:hover {
-    text-decoration-color: var(--green);
+    background: var(--surf0);
 }
 
 #navinner > span > a.active, #navinner > span > a:active {
-    background: var(--surf0);
-    text-decoration-color: var(--green);
+    background: var(--surf1);
 }
 
 a:has(.logo) {

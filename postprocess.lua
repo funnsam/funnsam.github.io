@@ -131,10 +131,10 @@ function generate_final_html(md_path, out_path, depth, body, options)
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="/theme.js" blocking="render"></script>
+        <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font">
+        <script src="/theme.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css">
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
         <script defer src="/script.js"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/fontawesome.min.js" crossorigin="anonymous"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/solid.min.js" crossorigin="anonymous"></script>
@@ -142,6 +142,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <title>%s</title>
     </head>
     <body>
+        <script>0</script>
         <nav>
             <div id="navbg"></div>
             <div id="navham">
