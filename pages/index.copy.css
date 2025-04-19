@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--space-l);
+    gap: var(--space-s);
 }
 
 .card:last-child {
