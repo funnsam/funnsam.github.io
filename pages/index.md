@@ -2,7 +2,7 @@
 I started programming in around 2022. I am self-taught by using the internet.
 
 <br>
-<style>@import url("/index.css")</style>
+<style>@import url("/index.css");</style>
 
 <div class="card">
     <div>
