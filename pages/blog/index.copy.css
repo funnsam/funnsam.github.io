@@ -1,40 +1,32 @@
-.post {
-    margin-bottom: var(--space-m);
-    padding: var(--space-m);
-    background-color: var(--surf0);
-    border-radius: var(--space-s);
-}
-
-.post .top {
+.card .top {
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
 
-.post .title {
-    font-size: 1.25rem;
-    flex-grow: 1;
+.card .title {
+    font-size: 1.25em;
+    font-weight: 450;
+    margin-right: auto;
 }
 
-.post .date {
+.card .date {
     color: var(--subt1);
-    font-size: 0.85rem;
+    font-size: 0.85em;
     margin: auto 0;
-    text-align: right;
 }
 
-.post .tags {
-    font-size: 0.85rem;
+.card .tags {
+    font-size: 0.85em;
 }
 
 /* small screen */
 @media only screen and (max-width: 25rem) {
-    .post .top {
+    .card .top {
         flex-direction: column;
     }
 }
 
 .tag {
-    color: var(--text-color);
+    color: var(--subt1);
     text-decoration: none;
 }

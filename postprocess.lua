@@ -94,7 +94,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
 
             local date = date_to_string(p.options.date)
 
-            gen_posts[i] = string.format("<div class=\"post\"><div class=\"top\"><a href=\"%s\" class=\"title\">%s</a><span class=\"date\"><i class=\"fa-solid fa-calendar-days\"></i> %s</span></div><span class=\"tags\"><i class=\"fa-solid fa-tags\"></i> %s</span></div>", path_relative_to(p.out_path, path_parent(out_path)), sanitize(p.options.title), date, gen_tags_string(p.options.tags))
+            gen_posts[i] = string.format("<div class=\"card\"><div class=\"top\"><a href=\"%s\" class=\"title\">%s</a><span class=\"date\"><i class=\"fa-solid fa-calendar-days\"></i> %s</span></div><span class=\"tags\"><i class=\"fa-solid fa-tags\"></i> %s</span></div>", path_relative_to(p.out_path, path_parent(out_path)), sanitize(p.options.title), date, gen_tags_string(p.options.tags))
             body = body .. gen_posts[i]
         end
 
