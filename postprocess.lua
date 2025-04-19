@@ -28,7 +28,7 @@ function generate_socials()
     local soc = ""
 
     for _, i in ipairs(config.navbar.socials) do
-        soc = soc .. string.format("<a href=\"%s\"><span class=\"fa-brands fa-%s\">%s</span></a>", i.url, i.icon, i.icon)
+        soc = soc .. string.format("<a href=\"%s\" aria-label=\"%s\"><span class=\"fa-brands fa-%s\">%s</span></a>", i.url, i.icon, i.icon, i.icon)
     end
 
     return soc
@@ -146,14 +146,14 @@ function generate_final_html(md_path, out_path, depth, body, options)
             <div id="navbg"></div>
             <div id="navham">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
-                <button id="theme_tog_mob"><span class="fa-solid fa-fw fa-lg">Theme toggle</span></button>
-                <button id="hamburger"><span class="fa-solid fa-bars fa-lg">Menu</span></button>
+                <button id="theme_tog_mob" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
+                <button id="hamburger" aria-label="Menu"><span class="fa-solid fa-bars fa-lg">Menu</span></button>
             </div>
             <div id="navinner">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
                 %s
                 <span class="social">%s</span>
-                <button id="theme_tog"><span class="fa-solid fa-fw fa-lg">Theme toggle</span></button>
+                <button id="theme_tog" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
             </div>
         </nav>
         <div id="page_content">%s</div>
