@@ -18,6 +18,7 @@ function to_light() {
     p("text", "#4c4f69");
     p("subt1", "#5c5f77");
     p("subt0", "#6c6f85");
+    p("selbg", "#7c7f932f");
     p("over2", "#7c7f93");
     p("over1", "#8c8fa1");
     p("over0", "#9ca0b0");
@@ -47,6 +48,7 @@ function to_dark() {
     p("text", "#cdd6f4");
     p("subt1", "#bac2de");
     p("subt0", "#a6adc8");
+    p("selbg", "#9399b22f");
     p("over2", "#9399b2");
     p("over1", "#7f849c");
     p("over0", "#6c7086");

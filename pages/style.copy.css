@@ -29,6 +29,10 @@ html, body {
     transition: all 0.25s;
 }
 
+*::selection {
+    background: var(--selbg);
+}
+
 /* navbar */
 nav {
     position: sticky;

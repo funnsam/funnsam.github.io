@@ -1,0 +1,15 @@
+.card {
+    background: var(--crust);
+    border: 1px solid var(--surf0);
+    border-radius: 16px;
+    margin-top: var(--space-l);
+    padding: var(--space-l);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.card:last-child {
+    flex-grow: 1;
+}
