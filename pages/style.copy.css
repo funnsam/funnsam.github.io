@@ -8,22 +8,25 @@
 	--space-l: 1rem;
 	--space-xl: 1.25rem;
 	--space-xxl: 1.5rem;
-
-    --color-text: #cdd6f4;
 }
 
 html {
     min-height: 100%;
-    background: #1e1e2e;
+    background: var(--base);
+    transition: all 0.25s;
 }
 
 html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	color: var(--color-text);
+	color: var(--text);
 	font-family: "Inter", "Roboto", "Arial", sans-serif;
 	line-height: 1.5;
+}
+
+* {
+    transition: all 0.25s;
 }
 
 /* navbar */
@@ -52,8 +55,8 @@ nav {
     pointer-events: none;
     background: linear-gradient(
         to bottom,
-        #1e1e2eff 0%,
-        #1e1e2e3f 24px
+        var(--base) 0%,
+        transparent 24px
     );
     z-index: -1;
 }
@@ -64,14 +67,13 @@ nav {
     width: 100%;
 }
 
-#navinner > span > a, #hamburger {
+#navinner > span > a, nav button {
     border: none;
     height: 100%;
-    transition: all 0.25s;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: var(--space-xs);
-    color: var(--color-text);
+    color: var(--text);
     background: transparent;
     padding: var(--space-s);
 
@@ -79,17 +81,17 @@ nav {
     box-sizing: border-box;
 }
 
-#navinner > span > a > *, #hamburger > * {
+#navinner > span > a > *, nav button > * {
     margin: auto;
 }
 
-#navinner > span > a:hover, #hamburger:hover {
-    text-decoration-color: #a6e3a1;
+#navinner > span > a:hover, nav button:hover {
+    text-decoration-color: var(--green);
 }
 
 #navinner > span > a.active, #navinner > span > a:active {
-    background: #313244;
-    text-decoration-color: #a6e3a1;
+    background: var(--surf0);
+    text-decoration-color: var(--green);
 }
 
 a:has(.logo) {
@@ -111,7 +113,7 @@ a:has(.logo)::after {
     content: "funn's home";
     font-size: 1.25em;
     font-weight: 450;
-    color: var(--color-text);
+    color: var(--text);
 }
 
 /* navbar phone */
@@ -128,7 +130,6 @@ a:has(.logo)::after {
         height: 0;
         margin-top: var(--space-s);
         overflow: hidden;
-        transition: all 0.5s;
         flex-direction: column;
     }
 
@@ -138,7 +139,7 @@ a:has(.logo)::after {
     }
 
     #navinner > span {
-        border-top: 1px solid #a6adc8;
+        border-top: 1px solid var(--over2);
     }
 
     #navinner > span.social {
@@ -155,7 +156,7 @@ a:has(.logo)::after {
         padding-left: 10%;
     }
 
-    #navinner > a:has(.logo) {
+    #navinner > a:has(.logo), #theme_tog {
         display: none;
     }
 }
@@ -190,9 +191,9 @@ div#page_content {
 }
 
 a {
-	color: #89b4fa;
+	color: var(--blue);
     text-decoration: underline;
-    text-decoration-color: #89b4fa;
+    text-decoration-color: var(--blue);
     text-decoration-style: dotted;
 }
 

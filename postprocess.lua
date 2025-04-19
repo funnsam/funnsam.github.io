@@ -1,5 +1,3 @@
--- This is just https://github.com/funnsam/mw/blob/main/postprocess.lua, with some changes
-
 local function to_rel_url(url, depth)
 	if url:match("^.+://.*") or url:match("^%./.*") or url:match("^/.*") then
 		return url
@@ -63,7 +61,7 @@ function gen_tags_string(tags)
 end
 
 function generate_final_html(md_path, out_path, depth, body, options)
-	local title = "funn's homie"
+	local title = "funn's home"
 	if options.title ~= nil then
 		title = title .. " — " .. options.title
 	end
@@ -133,26 +131,28 @@ function generate_final_html(md_path, out_path, depth, body, options)
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+        <script defer src="/script.js"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/fontawesome.min.js" crossorigin="anonymous"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/solid.min.js" crossorigin="anonymous"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/brands.min.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/style.css">
-        <script defer src="/script.js"></script>
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
         <title>%s</title>
     </head>
     <body>
-        <script>0</script>
+        <script src="/theme.js"></script>
         <nav>
             <div id="navbg"></div>
             <div id="navham">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
-                <button id="hamburger"><span class="fa-solid fa-bars"></span></button>
+                <button id="theme_tog_mob"><span class="fa-solid fa-fw fa-lg">Theme toggle</span></button>
+                <button id="hamburger"><span class="fa-solid fa-bars fa-lg">Menu</span></button>
             </div>
             <div id="navinner">
                 <a href="/"><img class="logo" src="%s" alt="Logo"></a>
                 %s
                 <span class="social">%s</span>
+                <button id="theme_tog"><span class="fa-solid fa-fw fa-lg">Theme toggle</span></button>
             </div>
         </nav>
         <div id="page_content">%s</div>

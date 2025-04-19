@@ -1,7 +1,7 @@
 .post {
     margin-bottom: var(--space-m);
     padding: var(--space-m);
-    background-color: #313244;
+    background-color: var(--surf0);
     border-radius: var(--space-s);
 }
 
@@ -17,7 +17,7 @@
 }
 
 .post .date {
-    color: #bac2de;
+    color: var(--subt1);
     font-size: 0.85rem;
     margin: auto 0;
     text-align: right;
