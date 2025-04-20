@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
 
 @property --base-nav {
     syntax: "<color>";
@@ -8,12 +8,12 @@
 
 :root {
     /* tailwind m-1, m-2, m-3, .. */
-	--space-xs: 0.25em;
-	--space-s: 0.5em;
-	--space-m: 0.75em;
-	--space-l: 1em;
-	--space-xl: 1.25em;
-	--space-xxl: 1.5em;
+    --space-xs: 0.25em;
+    --space-s: 0.5em;
+    --space-m: 0.75em;
+    --space-l: 1em;
+    --space-xl: 1.25em;
+    --space-xxl: 1.5em;
 }
 
 html {
@@ -23,12 +23,11 @@ html {
 }
 
 html, body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	color: var(--text);
-	font-family: "Inter", "Roboto", "Arial", sans-serif;
-	line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: var(--text);
+    font-family: "Fira Sans", system-ui, sans-serif;
 }
 
 * {
@@ -48,7 +47,7 @@ nav {
     width: 100%;
     z-index: 99;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--over2);
+    border-bottom: 1px solid var(--surf2);
 }
 
 #navbg {
@@ -57,20 +56,32 @@ nav {
 
     position: absolute;
     inset: 0;
-    height: 200%;
-    backdrop-filter: blur(8px);
-    mask-image: linear-gradient(
-        to bottom,
-        black 0% 50%,
-        transparent 50% 100%
-    );
+    height: 100%;
+    background: var(--base);
     pointer-events: none;
-    background: linear-gradient(
-        to bottom,
-        var(--base-nav) 0%,
-        transparent 24px
-    );
     z-index: -1;
+}
+
+@supports (mask-image: linear-gradient(to bottom, red 0)) {
+    #navbg {
+        height: 200%;
+        mask-image: linear-gradient(
+            to bottom,
+            black 0% 50%,
+            transparent 50% 100%
+        );
+    }
+}
+
+@supports (backdrop-filter: blur(12px)) {
+    #navbg {
+        backdrop-filter: blur(12px);
+        background: linear-gradient(
+            to bottom,
+            var(--base-nav) 0%,
+            transparent 24px
+        );
+    }
 }
 
 #navinner, #navham {
@@ -81,7 +92,6 @@ nav {
 
 #navinner > span > a, nav button {
     border: none;
-    height: 100%;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: var(--space-xs);
@@ -95,7 +105,7 @@ nav {
 }
 
 #navinner > span > a > *, nav button > * {
-    margin: auto;
+    margin: auto 0;
 }
 
 #navinner > span > a:hover, nav button:hover {
@@ -124,7 +134,7 @@ a:has(.logo) {
 a:has(.logo)::after {
     content: "funn's home";
     font-size: 1.25em;
-    font-weight: 450;
+    font-weight: 500;
     color: var(--text);
 }
 
@@ -155,7 +165,7 @@ a:has(.logo)::after {
     }
 
     #navinner > span {
-        border-top: 1px solid var(--over2);
+        border-top: 1px solid var(--surf2);
     }
 
     #navinner > span.social {
@@ -163,12 +173,11 @@ a:has(.logo)::after {
     }
 
     #navinner > span > a {
-        padding: var(--space-s);
         height: 2.5em;
     }
 
     #navinner > span:not(.social) > a {
-        display: block;
+        width: 100%;
         padding-left: 10%;
     }
 
@@ -190,8 +199,9 @@ a:has(.logo)::after {
     }
 
     #navinner > span > a {
-        max-width: fit-content;
+        height: 100%;
         text-align: center;
+        max-width: fit-content;
     }
 
     #navham {
@@ -207,7 +217,7 @@ div#page_content {
 }
 
 a {
-	color: var(--blue);
+    color: var(--blue);
     text-decoration: underline;
     text-decoration-color: var(--blue);
     text-decoration-style: dotted;
@@ -218,28 +228,33 @@ a:hover, a:active {
 }
 
 h1 {
-	margin-top: 0;
-	margin-bottom: var(--space-l);
+    margin-top: 0;
+    margin-bottom: var(--space-s);
+}
+
+#page_content > :not(div) + h1 {
+    margin-top: var(--space-l);
 }
 
 h2 {
-	margin-top: 0;
-	margin-bottom: var(--space-m);
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-s);
 }
 
 h3, h4, h5, h6 {
-	margin-top: 0;
-	margin-bottom: var(--space-s);
+    margin-top: var(--space-s);
+    margin-bottom: var(--space-xs);
 }
 
 p {
-	text-wrap: pretty;
-	margin-top: 0;
-	margin-bottom: var(--space-m);
+    text-wrap: pretty;
+    margin-top: 0;
+    margin-bottom: var(--space-xxl);
+    line-height: 1.6;
 }
 
 ul {
-	margin: var(--space-xs) 0;
+    margin: var(--space-xs) 0;
 }
 
 .card {

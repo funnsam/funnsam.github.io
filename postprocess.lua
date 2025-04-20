@@ -131,7 +131,7 @@ function generate_final_html(md_path, out_path, depth, body, options)
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <script src="/theme.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css">
