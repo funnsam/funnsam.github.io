@@ -143,7 +143,6 @@ a:has(.logo)::after {
     nav {
         padding-bottom: 0;
         max-height: 100vh;
-        overflow: hidden;
         display: flex;
         flex-direction: column;
     }
