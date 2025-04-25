@@ -6,7 +6,7 @@ title = "My projects"
 No ideas yet :man_shrugging:
 
 # Active projects
-- [Not very good chessbot v2](https://github.com/funnsam/Dysprosium)
+- [Not very good chessbot v2 (Dysprosium)](./dy66)
 
 # Old projects
 - [My 3rd raytracer](https://github.com/funnsam/raytracer3)
