@@ -1,5 +1,5 @@
 [navbar]
-logo = "/pfp.png"
+logo = "/pfp.jpg"
 items = [
     [
         { name = "My Projects", url = "projects/", md = "projects/index.md" },
