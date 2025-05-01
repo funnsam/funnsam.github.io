@@ -126,6 +126,7 @@ a:has(.logo) {
 }
 
 .logo {
+    width: fit-content;
     height: 100%;
     object-fit: contain;
     border-radius: 50%;

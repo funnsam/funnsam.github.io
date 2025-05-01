@@ -132,7 +132,10 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap">
         <script src="/theme.js"></script>
+        <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css">
         <script defer src="/script.js"></script>
@@ -146,12 +149,12 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <nav>
             <div id="navbg"></div>
             <div id="navham">
-                <a href="/"><img class="logo" src="%s" alt="Logo"></a>
+                <a href="/"><img class="logo" src="%s" alt="Logo" width="40" height="40"></a>
                 <button id="theme_tog_mob" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
                 <button id="hamburger" aria-label="Menu"><span class="fa-solid fa-bars fa-lg">Menu</span></button>
             </div>
             <div id="navinner">
-                <a href="/"><img class="logo" src="%s" alt="Logo"></a>
+                <a href="/"><img class="logo" src="%s" alt="Logo" width="40" height="40"></a>
                 %s
                 <span class="social">%s</span>
                 <button id="theme_tog" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
