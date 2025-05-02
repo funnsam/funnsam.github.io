@@ -40,6 +40,7 @@ html, body {
 
 /* navbar */
 nav {
+    display: flex;
     position: sticky;
     margin: 0;
     padding: var(--space-s);
@@ -87,8 +88,10 @@ nav {
 #navinner, #navham {
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
+
+#navinner { grid-area: inner; }
+#navham { grid-area: ham; }
 
 #navinner > span > a, nav button {
     border: none;
@@ -117,9 +120,10 @@ nav {
 }
 
 a:has(.logo) {
+    grid-area: logo;
+
     text-decoration: none;
     height: 100%;
-    margin-right: auto;
     display: flex;
     align-items: center;
     gap: var(--space-s);
@@ -142,14 +146,15 @@ a:has(.logo)::after {
 /* navbar phone */
 @media only screen and (max-width: 45rem) {
     nav {
+        display: grid;
+        grid-template-areas: "logo ham" "inner inner";
         padding-bottom: 0;
         max-height: 100vh;
-        display: flex;
-        flex-direction: column;
     }
 
     #navham {
         height: 2.5em;
+        margin-left: auto;
     }
 
     #navinner {
@@ -190,6 +195,7 @@ a:has(.logo)::after {
 @media only screen and (not (max-width: 45rem)) {
     #navinner {
         height: 2.5em;
+        margin-left: auto;
         gap: var(--space-xl);
     }
 

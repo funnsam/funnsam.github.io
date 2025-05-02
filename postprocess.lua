@@ -148,37 +148,24 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <script>0</script>
         <nav>
             <div id="navbg"></div>
+            <a href="/"><img
+                class="logo"
+                srcset="
+                    /pfp_1x.jpg,
+                    /pfp_2x.jpg 2x,
+                    /pfp_3x.jpg 3x,
+                    /pfp_4x.jpg 4x,
+                "
+                src="/pfp_1x.jpg"
+                alt="Logo"
+                width="40"
+                height="40"
+            ></a>
             <div id="navham">
-                <a href="/"><img
-                    class="logo"
-                    srcset="
-                        /pfp_1x.jpg,
-                        /pfp_2x.jpg 2x,
-                        /pfp_3x.jpg 3x,
-                        /pfp_4x.jpg 4x,
-                    "
-                    src="/pfp_1x.jpg"
-                    alt="Logo"
-                    width="40"
-                    height="40"
-                ></a>
                 <button id="theme_tog_mob" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
                 <button id="hamburger" aria-label="Menu"><span class="fa-solid fa-bars fa-lg">Menu</span></button>
             </div>
             <div id="navinner">
-                <a href="/"><img
-                    class="logo"
-                    srcset="
-                        /pfp_1x.jpg,
-                        /pfp_2x.jpg 2x,
-                        /pfp_3x.jpg 3x,
-                        /pfp_4x.jpg 4x,
-                    "
-                    src="/pfp_1x.jpg"
-                    alt="Logo"
-                    width="40"
-                    height="40"
-                ></a>
                 %s
                 <span class="social">%s</span>
                 <button id="theme_tog" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
