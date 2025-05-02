@@ -149,12 +149,36 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <nav>
             <div id="navbg"></div>
             <div id="navham">
-                <a href="/"><img class="logo" src="%s" alt="Logo" width="40" height="40"></a>
+                <a href="/"><img
+                    class="logo"
+                    srcset="
+                        /pfp_1x.jpg,
+                        /pfp_2x.jpg 2x,
+                        /pfp_3x.jpg 3x,
+                        /pfp_4x.jpg 4x,
+                    "
+                    src="/pfp_1x.jpg"
+                    alt="Logo"
+                    width="40"
+                    height="40"
+                ></a>
                 <button id="theme_tog_mob" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
                 <button id="hamburger" aria-label="Menu"><span class="fa-solid fa-bars fa-lg">Menu</span></button>
             </div>
             <div id="navinner">
-                <a href="/"><img class="logo" src="%s" alt="Logo" width="40" height="40"></a>
+                <a href="/"><img
+                    class="logo"
+                    srcset="
+                        /pfp_1x.jpg,
+                        /pfp_2x.jpg 2x,
+                        /pfp_3x.jpg 3x,
+                        /pfp_4x.jpg 4x,
+                    "
+                    src="/pfp_1x.jpg"
+                    alt="Logo"
+                    width="40"
+                    height="40"
+                ></a>
                 %s
                 <span class="social">%s</span>
                 <button id="theme_tog" aria-label="Toggle light/dark theme"><span class="fa-solid fa-fw fa-lg">Toggle light/dark theme</span></button>
@@ -163,5 +187,5 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <div id="page_content">%s</div>
     </body>
 </html>
-]], sanitize(title), config.navbar.logo, config.navbar.logo, navbar_items, social_items, body)
+]], sanitize(title), navbar_items, social_items, body)
 end
