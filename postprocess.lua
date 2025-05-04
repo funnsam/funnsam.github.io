@@ -143,6 +143,8 @@ function generate_final_html(md_path, out_path, depth, body, options)
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/solid.min.js" crossorigin="anonymous"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/brands.min.js" crossorigin="anonymous"></script>
         <title>%s</title>
+
+        <link rel="me" href="https://www.threads.net/@funn.is_a.dev">
     </head>
     <body>
         <script>0</script>
